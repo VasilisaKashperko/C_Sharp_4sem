@@ -29,21 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonConcat = new System.Windows.Forms.Button();
             this.welcomeLettering = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxForTheFirst = new System.Windows.Forms.TextBox();
             this.inputTheFirstString = new System.Windows.Forms.Label();
             this.inputTheSecondString = new System.Windows.Forms.Label();
             this.textBoxForTheSecond = new System.Windows.Forms.TextBox();
+            this.helpingText = new System.Windows.Forms.Label();
+            this.buttonReplacement = new System.Windows.Forms.Button();
+            this.buttonCut = new System.Windows.Forms.Button();
+            this.buttonGetSymbol = new System.Windows.Forms.Button();
+            this.buttonLength = new System.Windows.Forms.Button();
+            this.buttonDoubleVowels = new System.Windows.Forms.Button();
+            this.resultText = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonConcat
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonConcat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            resources.ApplyResources(this.buttonConcat, "buttonConcat");
+            this.buttonConcat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.buttonConcat.Name = "buttonConcat";
+            this.buttonConcat.UseVisualStyleBackColor = false;
             // 
             // welcomeLettering
             // 
@@ -81,18 +90,79 @@
             // 
             resources.ApplyResources(this.textBoxForTheSecond, "textBoxForTheSecond");
             this.textBoxForTheSecond.Name = "textBoxForTheSecond";
+            this.textBoxForTheSecond.Enter += new System.EventHandler(this.textBoxForTheSecond_Enter);
+            this.textBoxForTheSecond.Leave += new System.EventHandler(this.textBoxForTheSecond_Leave);
+            // 
+            // helpingText
+            // 
+            resources.ApplyResources(this.helpingText, "helpingText");
+            this.helpingText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.helpingText.Name = "helpingText";
+            // 
+            // buttonReplacement
+            // 
+            this.buttonReplacement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            resources.ApplyResources(this.buttonReplacement, "buttonReplacement");
+            this.buttonReplacement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.buttonReplacement.Name = "buttonReplacement";
+            this.buttonReplacement.UseVisualStyleBackColor = false;
+            // 
+            // buttonCut
+            // 
+            this.buttonCut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            resources.ApplyResources(this.buttonCut, "buttonCut");
+            this.buttonCut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.buttonCut.Name = "buttonCut";
+            this.buttonCut.UseVisualStyleBackColor = false;
+            // 
+            // buttonGetSymbol
+            // 
+            this.buttonGetSymbol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            resources.ApplyResources(this.buttonGetSymbol, "buttonGetSymbol");
+            this.buttonGetSymbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.buttonGetSymbol.Name = "buttonGetSymbol";
+            this.buttonGetSymbol.UseVisualStyleBackColor = false;
+            // 
+            // buttonLength
+            // 
+            this.buttonLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            resources.ApplyResources(this.buttonLength, "buttonLength");
+            this.buttonLength.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.buttonLength.Name = "buttonLength";
+            this.buttonLength.UseVisualStyleBackColor = false;
+            // 
+            // buttonDoubleVowels
+            // 
+            this.buttonDoubleVowels.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            resources.ApplyResources(this.buttonDoubleVowels, "buttonDoubleVowels");
+            this.buttonDoubleVowels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.buttonDoubleVowels.Name = "buttonDoubleVowels";
+            this.buttonDoubleVowels.UseVisualStyleBackColor = false;
+            // 
+            // resultText
+            // 
+            resources.ApplyResources(this.resultText, "resultText");
+            this.resultText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
+            this.resultText.Name = "resultText";
             // 
             // Calculator
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.Controls.Add(this.resultText);
+            this.Controls.Add(this.buttonDoubleVowels);
+            this.Controls.Add(this.buttonLength);
+            this.Controls.Add(this.buttonGetSymbol);
+            this.Controls.Add(this.buttonCut);
+            this.Controls.Add(this.buttonReplacement);
+            this.Controls.Add(this.helpingText);
             this.Controls.Add(this.textBoxForTheSecond);
             this.Controls.Add(this.inputTheSecondString);
             this.Controls.Add(this.inputTheFirstString);
             this.Controls.Add(this.textBoxForTheFirst);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonConcat);
             this.Name = "Calculator";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -103,12 +173,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonConcat;
         private System.Windows.Forms.Label welcomeLettering;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxForTheFirst;
         private System.Windows.Forms.Label inputTheFirstString;
         private System.Windows.Forms.Label inputTheSecondString;
         private System.Windows.Forms.TextBox textBoxForTheSecond;
+        private System.Windows.Forms.Label helpingText;
+        private System.Windows.Forms.Button buttonReplacement;
+        private System.Windows.Forms.Button buttonCut;
+        private System.Windows.Forms.Button buttonGetSymbol;
+        private System.Windows.Forms.Button buttonLength;
+        private System.Windows.Forms.Button buttonDoubleVowels;
+        private System.Windows.Forms.Label resultText;
     }
 }

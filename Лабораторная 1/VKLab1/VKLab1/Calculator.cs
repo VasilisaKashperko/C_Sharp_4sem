@@ -32,5 +32,21 @@ namespace VKLab1
                 textBoxForTheFirst.Text = "Введите строку";
             }
         }
+
+        private void textBoxForTheSecond_Enter(object sender, EventArgs e)
+        {
+            if (textBoxForTheSecond.Text == "Введите строку")
+            {
+                textBoxForTheSecond.Text = "";
+            }
+        }
+
+        private void textBoxForTheSecond_Leave(object sender, EventArgs e)
+        {
+            if (textBoxForTheSecond.Text == "")
+            {
+                textBoxForTheSecond.Text = "Введите строку";
+            }
+        }
     }
 }
