@@ -17,6 +17,9 @@ namespace VKLab1
             InitializeComponent();
         }
 
+        #region [Hints]
+        // hint для textbox'ов
+
         private void textBoxForTheFirst_Enter(object sender, EventArgs e)
         {
             if (textBoxForTheFirst.Text == "Введите строку")
@@ -48,5 +51,18 @@ namespace VKLab1
                 textBoxForTheSecond.Text = "Введите строку";
             }
         }
+
+        #endregion
+
+        private void buttonConcat_Click(object sender, EventArgs e)
+        {
+            textBoxResult1.Text = string.Concat(textBoxForTheFirst.Text, textBoxForTheSecond.Text);
+        }
+
+        private void buttonReplacement_Click(object sender, EventArgs e)
+        {
+            textBoxResult1.Text = textBoxForTheFirst.Text.Replace("плохой", " "+textBoxForTheSecond.Text+" ");
+        }
+
     }
 }

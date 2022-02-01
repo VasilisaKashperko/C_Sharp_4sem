@@ -43,6 +43,7 @@
             this.buttonLength = new System.Windows.Forms.Button();
             this.buttonDoubleVowels = new System.Windows.Forms.Button();
             this.resultText = new System.Windows.Forms.Label();
+            this.textBoxResult1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             this.buttonConcat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonConcat.Name = "buttonConcat";
             this.buttonConcat.UseVisualStyleBackColor = false;
+            this.buttonConcat.Click += new System.EventHandler(this.buttonConcat_Click);
             // 
             // welcomeLettering
             // 
@@ -70,6 +72,7 @@
             // textBoxForTheFirst
             // 
             resources.ApplyResources(this.textBoxForTheFirst, "textBoxForTheFirst");
+            this.textBoxForTheFirst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBoxForTheFirst.Name = "textBoxForTheFirst";
             this.textBoxForTheFirst.Enter += new System.EventHandler(this.textBoxForTheFirst_Enter);
             this.textBoxForTheFirst.Leave += new System.EventHandler(this.textBoxForTheFirst_Leave);
@@ -89,6 +92,7 @@
             // textBoxForTheSecond
             // 
             resources.ApplyResources(this.textBoxForTheSecond, "textBoxForTheSecond");
+            this.textBoxForTheSecond.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBoxForTheSecond.Name = "textBoxForTheSecond";
             this.textBoxForTheSecond.Enter += new System.EventHandler(this.textBoxForTheSecond_Enter);
             this.textBoxForTheSecond.Leave += new System.EventHandler(this.textBoxForTheSecond_Leave);
@@ -106,6 +110,7 @@
             this.buttonReplacement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonReplacement.Name = "buttonReplacement";
             this.buttonReplacement.UseVisualStyleBackColor = false;
+            this.buttonReplacement.Click += new System.EventHandler(this.buttonReplacement_Click);
             // 
             // buttonCut
             // 
@@ -145,11 +150,18 @@
             this.resultText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.resultText.Name = "resultText";
             // 
+            // textBoxResult1
+            // 
+            resources.ApplyResources(this.textBoxResult1, "textBoxResult1");
+            this.textBoxResult1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBoxResult1.Name = "textBoxResult1";
+            // 
             // Calculator
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.Controls.Add(this.textBoxResult1);
             this.Controls.Add(this.resultText);
             this.Controls.Add(this.buttonDoubleVowels);
             this.Controls.Add(this.buttonLength);
@@ -187,5 +199,6 @@
         private System.Windows.Forms.Button buttonLength;
         private System.Windows.Forms.Button buttonDoubleVowels;
         private System.Windows.Forms.Label resultText;
+        private System.Windows.Forms.TextBox textBoxResult1;
     }
 }

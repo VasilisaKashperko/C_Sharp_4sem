@@ -123,13 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonConcat.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="buttonConcat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 302</value>
+    <value>59, 306</value>
   </data>
   <data name="buttonConcat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 31</value>
+    <value>142, 35</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonConcat.TabIndex" type="System.Int32, mscorlib">
@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonConcat.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="welcomeLettering.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -157,7 +157,7 @@
     <value>News706 BT, 18pt, style=Bold</value>
   </data>
   <data name="welcomeLettering.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 36</value>
+    <value>61, 36</value>
   </data>
   <data name="welcomeLettering.Size" type="System.Drawing.Size, System.Drawing">
     <value>710, 36</value>
@@ -190,7 +190,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 100</value>
+    <value>826, 100</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -205,13 +205,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="textBoxForTheFirst.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBoxForTheFirst.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 127</value>
+    <value>412, 130</value>
   </data>
   <data name="textBoxForTheFirst.Size" type="System.Drawing.Size, System.Drawing">
     <value>338, 30</value>
@@ -232,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxForTheFirst.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="inputTheFirstString.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -241,7 +241,7 @@
     <value>Microsoft Sans Serif, 13.8pt</value>
   </data>
   <data name="inputTheFirstString.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 128</value>
+    <value>66, 131</value>
   </data>
   <data name="inputTheFirstString.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 29</value>
@@ -262,7 +262,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;inputTheFirstString.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="inputTheSecondString.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,7 +271,7 @@
     <value>Microsoft Sans Serif, 13.8pt</value>
   </data>
   <data name="inputTheSecondString.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 177</value>
+    <value>66, 180</value>
   </data>
   <data name="inputTheSecondString.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 29</value>
@@ -292,13 +292,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;inputTheSecondString.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="textBoxForTheSecond.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBoxForTheSecond.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 176</value>
+    <value>412, 179</value>
   </data>
   <data name="textBoxForTheSecond.Size" type="System.Drawing.Size, System.Drawing">
     <value>338, 30</value>
@@ -319,7 +319,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxForTheSecond.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="helpingText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -331,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="helpingText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 228</value>
+    <value>196, 230</value>
   </data>
   <data name="helpingText.Size" type="System.Drawing.Size, System.Drawing">
     <value>421, 58</value>
@@ -356,22 +356,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;helpingText.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="buttonReplacement.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="buttonReplacement.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="buttonReplacement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonReplacement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 302</value>
+    <value>222, 306</value>
   </data>
   <data name="buttonReplacement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 31</value>
+    <value>128, 35</value>
   </data>
   <data name="buttonReplacement.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -389,22 +389,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonReplacement.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="buttonCut.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="buttonCut.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="buttonCut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonCut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>607, 302</value>
+    <value>631, 306</value>
   </data>
   <data name="buttonCut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 31</value>
+    <value>128, 35</value>
   </data>
   <data name="buttonCut.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -422,22 +422,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonCut.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="buttonGetSymbol.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="buttonGetSymbol.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="buttonGetSymbol.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonGetSymbol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>347, 302</value>
+    <value>371, 306</value>
   </data>
   <data name="buttonGetSymbol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 31</value>
+    <value>238, 35</value>
   </data>
   <data name="buttonGetSymbol.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -455,22 +455,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonGetSymbol.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="buttonLength.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="buttonLength.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="buttonLength.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonLength.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 350</value>
+    <value>208, 354</value>
   </data>
   <data name="buttonLength.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 31</value>
+    <value>197, 35</value>
   </data>
   <data name="buttonLength.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -488,22 +488,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonLength.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="buttonDoubleVowels.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="buttonDoubleVowels.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 10pt</value>
+    <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="buttonDoubleVowels.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="buttonDoubleVowels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>397, 350</value>
+    <value>421, 354</value>
   </data>
   <data name="buttonDoubleVowels.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 31</value>
+    <value>188, 35</value>
   </data>
   <data name="buttonDoubleVowels.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -521,7 +521,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonDoubleVowels.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="resultText.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -533,7 +533,7 @@
     <value>NoControl</value>
   </data>
   <data name="resultText.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 412</value>
+    <value>66, 429</value>
   </data>
   <data name="resultText.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 29</value>
@@ -557,6 +557,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;resultText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBoxResult1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="textBoxResult1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>222, 429</value>
+  </data>
+  <data name="textBoxResult1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>528, 30</value>
+  </data>
+  <data name="textBoxResult1.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="textBoxResult1.Text" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="textBoxResult1.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;textBoxResult1.Name" xml:space="preserve">
+    <value>textBoxResult1</value>
+  </data>
+  <data name="&gt;&gt;textBoxResult1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxResult1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxResult1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -566,7 +596,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 530</value>
+    <value>826, 500</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
