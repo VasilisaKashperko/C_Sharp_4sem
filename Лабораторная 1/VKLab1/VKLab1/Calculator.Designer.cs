@@ -105,8 +105,8 @@
             // 
             // buttonReplacement
             // 
-            this.buttonReplacement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
             resources.ApplyResources(this.buttonReplacement, "buttonReplacement");
+            this.buttonReplacement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
             this.buttonReplacement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonReplacement.Name = "buttonReplacement";
             this.buttonReplacement.UseVisualStyleBackColor = false;
@@ -119,6 +119,7 @@
             this.buttonCut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonCut.Name = "buttonCut";
             this.buttonCut.UseVisualStyleBackColor = false;
+            this.buttonCut.Click += new System.EventHandler(this.buttonCut_Click);
             // 
             // buttonGetSymbol
             // 
@@ -136,6 +137,7 @@
             this.buttonLength.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonLength.Name = "buttonLength";
             this.buttonLength.UseVisualStyleBackColor = false;
+            this.buttonLength.Click += new System.EventHandler(this.buttonLength_Click);
             // 
             // buttonDoubleVowels
             // 
@@ -144,6 +146,7 @@
             this.buttonDoubleVowels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonDoubleVowels.Name = "buttonDoubleVowels";
             this.buttonDoubleVowels.UseVisualStyleBackColor = false;
+            this.buttonDoubleVowels.Click += new System.EventHandler(this.buttonDoubleVowels_Click);
             // 
             // resultText
             // 

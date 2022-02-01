@@ -54,6 +54,7 @@ namespace VKLab1
 
         #endregion
 
+        #region [Methods for buttons]
         private void buttonConcat_Click(object sender, EventArgs e)
         {
             textBoxResult.Text = string.Concat(textBoxForTheFirst.Text, textBoxForTheSecond.Text);
@@ -71,5 +72,52 @@ namespace VKLab1
             textBoxResult.Text = result.ToString();
         }
 
+        private void buttonCut_Click(object sender, EventArgs e)
+        {
+            textBoxResult.Text = textBoxForTheFirst.Text.Replace(textBoxForTheSecond.Text, "");
+        }
+
+        private void buttonLength_Click(object sender, EventArgs e)
+        {
+            textBoxResult.Text = $"Длина первой строки: {textBoxForTheFirst.Text.Length}. Длина второй строки: {textBoxForTheSecond.Text.Length}."; 
+        }
+
+        private void buttonDoubleVowels_Click(object sender, EventArgs e)
+        {
+            char[] vowels = {'а', 'и', 'о', 'у', 'ы', 'е', 'э', 'я', 'ю', 'А', 'И', 'О', 'У', 'Ы', 'Е', 'Э', 'Я', 'Ю'};
+            char[] stringFirst = textBoxForTheFirst.Text.ToCharArray();
+            char[] stringSecond = textBoxForTheSecond.Text.ToCharArray();
+
+            if (textBoxForTheFirst.Text != "Введите строку" && textBoxForTheSecond.Text == "Введите строку")
+            {
+                for (int n = 0; n == stringFirst.Length - 1; n++)
+                {
+                    for (int i = 0; i == vowels.Length - 1; i++)
+                    {
+                        if (textBoxForTheFirst.Text.Contains(vowels[i]))
+                        {
+                            int foundVowel = textBoxForTheFirst.Text.IndexOf(vowels[i]);
+                            textBoxResult.Text = textBoxForTheFirst.Text.Insert(foundVowel, vowels[i].ToString());
+                        }
+                        else
+                        {
+                            textBoxResult.Text = "Гласных в строке нет!";
+                        }
+                    }
+                }
+            }
+
+            if (textBoxForTheSecond.Text != "Введите строку" && textBoxForTheFirst.Text == "Введите строку")
+            {
+
+            }
+
+            if (textBoxForTheSecond.Text != "Введите строку" && textBoxForTheFirst.Text != "Введите строку")
+            {
+                textBoxResult.Text = "Удалите, пожалуйста, любую введенную строку";
+            }
+        }
+
+        #endregion
     }
 }
