@@ -16,6 +16,5 @@ namespace VKLab1
         {
             InitializeComponent();
         }
-
     }
 }

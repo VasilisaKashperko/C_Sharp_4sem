@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 296</value>
+    <value>344, 302</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="welcomeLettering.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -199,28 +199,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBoxForTheFirst.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="textBoxForTheFirst.Location" type="System.Drawing.Point, System.Drawing">
+    <value>389, 146</value>
+  </data>
+  <data name="textBoxForTheFirst.Size" type="System.Drawing.Size, System.Drawing">
+    <value>338, 30</value>
+  </data>
+  <data name="textBoxForTheFirst.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 154</value>
+  <data name="&gt;&gt;textBoxForTheFirst.Name" xml:space="preserve">
+    <value>textBoxForTheFirst</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 22</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBoxForTheFirst.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;textBoxForTheFirst.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;textBoxForTheFirst.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="inputTheFirstString.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -250,7 +253,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;inputTheFirstString.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="inputTheSecondString.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -280,6 +283,30 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;inputTheSecondString.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBoxForTheSecond.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="textBoxForTheSecond.Location" type="System.Drawing.Point, System.Drawing">
+    <value>389, 195</value>
+  </data>
+  <data name="textBoxForTheSecond.Size" type="System.Drawing.Size, System.Drawing">
+    <value>338, 30</value>
+  </data>
+  <data name="textBoxForTheSecond.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;textBoxForTheSecond.Name" xml:space="preserve">
+    <value>textBoxForTheSecond</value>
+  </data>
+  <data name="&gt;&gt;textBoxForTheSecond.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxForTheSecond.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxForTheSecond.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
