@@ -56,12 +56,19 @@ namespace VKLab1
 
         private void buttonConcat_Click(object sender, EventArgs e)
         {
-            textBoxResult1.Text = string.Concat(textBoxForTheFirst.Text, textBoxForTheSecond.Text);
+            textBoxResult.Text = string.Concat(textBoxForTheFirst.Text, textBoxForTheSecond.Text);
         }
 
         private void buttonReplacement_Click(object sender, EventArgs e)
         {
-            textBoxResult1.Text = textBoxForTheFirst.Text.Replace("плохой", " "+textBoxForTheSecond.Text+" ");
+            textBoxResult.Text = textBoxForTheFirst.Text.Replace("плохой", textBoxForTheSecond.Text);
+        }
+
+        private void buttonGetSymbol_Click(object sender, EventArgs e)
+        {
+            char[] c = textBoxForTheSecond.Text.ToCharArray();
+            int result = textBoxForTheFirst.Text.IndexOf(c[0])+1;
+            textBoxResult.Text = result.ToString();
         }
 
     }

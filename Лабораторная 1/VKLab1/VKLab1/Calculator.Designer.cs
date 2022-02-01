@@ -43,7 +43,7 @@
             this.buttonLength = new System.Windows.Forms.Button();
             this.buttonDoubleVowels = new System.Windows.Forms.Button();
             this.resultText = new System.Windows.Forms.Label();
-            this.textBoxResult1 = new System.Windows.Forms.TextBox();
+            this.textBoxResult = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +127,7 @@
             this.buttonGetSymbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonGetSymbol.Name = "buttonGetSymbol";
             this.buttonGetSymbol.UseVisualStyleBackColor = false;
+            this.buttonGetSymbol.Click += new System.EventHandler(this.buttonGetSymbol_Click);
             // 
             // buttonLength
             // 
@@ -150,18 +151,18 @@
             this.resultText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.resultText.Name = "resultText";
             // 
-            // textBoxResult1
+            // textBoxResult
             // 
-            resources.ApplyResources(this.textBoxResult1, "textBoxResult1");
-            this.textBoxResult1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBoxResult1.Name = "textBoxResult1";
+            resources.ApplyResources(this.textBoxResult, "textBoxResult");
+            this.textBoxResult.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBoxResult.Name = "textBoxResult";
             // 
             // Calculator
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.Controls.Add(this.textBoxResult1);
+            this.Controls.Add(this.textBoxResult);
             this.Controls.Add(this.resultText);
             this.Controls.Add(this.buttonDoubleVowels);
             this.Controls.Add(this.buttonLength);
@@ -199,6 +200,6 @@
         private System.Windows.Forms.Button buttonLength;
         private System.Windows.Forms.Button buttonDoubleVowels;
         private System.Windows.Forms.Label resultText;
-        private System.Windows.Forms.TextBox textBoxResult1;
+        private System.Windows.Forms.TextBox textBoxResult;
     }
 }
