@@ -16,7 +16,7 @@ namespace VKLab1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Calculator());
+            Application.Run(new Form1());
         }
     }
 }
