@@ -150,7 +150,7 @@
     <value>News706 BT, 18pt, style=Bold</value>
   </data>
   <data name="welcomeLettering.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 36</value>
+    <value>37, 36</value>
   </data>
   <data name="welcomeLettering.Size" type="System.Drawing.Size, System.Drawing">
     <value>710, 36</value>
@@ -212,6 +212,9 @@
   </data>
   <data name="textBoxForTheFirst.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="textBoxForTheFirst.Text" xml:space="preserve">
+    <value>Введите строку</value>
   </data>
   <data name="&gt;&gt;textBoxForTheFirst.Name" xml:space="preserve">
     <value>textBoxForTheFirst</value>

@@ -62,6 +62,8 @@
             // 
             resources.ApplyResources(this.textBoxForTheFirst, "textBoxForTheFirst");
             this.textBoxForTheFirst.Name = "textBoxForTheFirst";
+            this.textBoxForTheFirst.Enter += new System.EventHandler(this.textBoxForTheFirst_Enter);
+            this.textBoxForTheFirst.Leave += new System.EventHandler(this.textBoxForTheFirst_Leave);
             // 
             // inputTheFirstString
             // 

@@ -16,5 +16,21 @@ namespace VKLab1
         {
             InitializeComponent();
         }
+
+        private void textBoxForTheFirst_Enter(object sender, EventArgs e)
+        {
+            if (textBoxForTheFirst.Text == "Введите строку")
+            {
+                textBoxForTheFirst.Text = "";
+            }
+        }
+
+        private void textBoxForTheFirst_Leave(object sender, EventArgs e)
+        {
+            if (textBoxForTheFirst.Text == "")
+            {
+                textBoxForTheFirst.Text = "Введите строку";
+            }
+        }
     }
 }
