@@ -116,6 +116,11 @@ namespace VKLab1
             {
                 textBoxResult.Text = "Удалите, пожалуйста, любую введенную строку";
             }
+
+            if (textBoxForTheSecond.Text == "Введите строку" && textBoxForTheFirst.Text == "Введите строку")
+            {
+                textBoxResult.Text = "Введите, пожалуйста, что-то в качестве строки";
+            }
         }
 
         #endregion
