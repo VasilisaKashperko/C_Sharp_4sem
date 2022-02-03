@@ -49,12 +49,15 @@
             // 
             // buttonConcat
             // 
-            this.buttonConcat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            this.buttonConcat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.buttonConcat.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.buttonConcat, "buttonConcat");
             this.buttonConcat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonConcat.Name = "buttonConcat";
             this.buttonConcat.UseVisualStyleBackColor = false;
             this.buttonConcat.Click += new System.EventHandler(this.buttonConcat_Click);
+            this.buttonConcat.MouseEnter += new System.EventHandler(this.buttonConcat_MouseEnter);
+            this.buttonConcat.MouseLeave += new System.EventHandler(this.buttonConcat_MouseLeave);
             // 
             // welcomeLettering
             // 
@@ -106,47 +109,62 @@
             // buttonReplacement
             // 
             resources.ApplyResources(this.buttonReplacement, "buttonReplacement");
-            this.buttonReplacement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            this.buttonReplacement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.buttonReplacement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonReplacement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonReplacement.Name = "buttonReplacement";
             this.buttonReplacement.UseVisualStyleBackColor = false;
             this.buttonReplacement.Click += new System.EventHandler(this.buttonReplacement_Click);
+            this.buttonReplacement.MouseEnter += new System.EventHandler(this.buttonReplacement_MouseEnter);
+            this.buttonReplacement.MouseLeave += new System.EventHandler(this.buttonReplacement_MouseLeave);
             // 
             // buttonCut
             // 
-            this.buttonCut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            this.buttonCut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.buttonCut.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.buttonCut, "buttonCut");
             this.buttonCut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonCut.Name = "buttonCut";
             this.buttonCut.UseVisualStyleBackColor = false;
             this.buttonCut.Click += new System.EventHandler(this.buttonCut_Click);
+            this.buttonCut.MouseEnter += new System.EventHandler(this.buttonCut_MouseEnter);
+            this.buttonCut.MouseLeave += new System.EventHandler(this.buttonCut_MouseLeave);
             // 
             // buttonGetSymbol
             // 
-            this.buttonGetSymbol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            this.buttonGetSymbol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.buttonGetSymbol.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.buttonGetSymbol, "buttonGetSymbol");
             this.buttonGetSymbol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonGetSymbol.Name = "buttonGetSymbol";
             this.buttonGetSymbol.UseVisualStyleBackColor = false;
             this.buttonGetSymbol.Click += new System.EventHandler(this.buttonGetSymbol_Click);
+            this.buttonGetSymbol.MouseEnter += new System.EventHandler(this.buttonGetSymbol_MouseEnter);
+            this.buttonGetSymbol.MouseLeave += new System.EventHandler(this.buttonGetSymbol_MouseLeave);
             // 
             // buttonLength
             // 
-            this.buttonLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            this.buttonLength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.buttonLength.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.buttonLength, "buttonLength");
             this.buttonLength.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonLength.Name = "buttonLength";
             this.buttonLength.UseVisualStyleBackColor = false;
             this.buttonLength.Click += new System.EventHandler(this.buttonLength_Click);
+            this.buttonLength.MouseEnter += new System.EventHandler(this.buttonLength_MouseEnter);
+            this.buttonLength.MouseLeave += new System.EventHandler(this.buttonLength_MouseLeave);
             // 
             // buttonDoubleVowels
             // 
-            this.buttonDoubleVowels.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(196)))), ((int)(((byte)(12)))));
+            this.buttonDoubleVowels.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+            this.buttonDoubleVowels.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.buttonDoubleVowels, "buttonDoubleVowels");
             this.buttonDoubleVowels.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(245)))), ((int)(((byte)(250)))));
             this.buttonDoubleVowels.Name = "buttonDoubleVowels";
             this.buttonDoubleVowels.UseVisualStyleBackColor = false;
             this.buttonDoubleVowels.Click += new System.EventHandler(this.buttonDoubleVowels_Click);
+            this.buttonDoubleVowels.MouseEnter += new System.EventHandler(this.buttonDoubleVowels_MouseEnter);
+            this.buttonDoubleVowels.MouseLeave += new System.EventHandler(this.buttonDoubleVowels_MouseLeave);
             // 
             // resultText
             // 
@@ -156,6 +174,7 @@
             // 
             // textBoxResult
             // 
+            this.textBoxResult.Cursor = System.Windows.Forms.Cursors.No;
             resources.ApplyResources(this.textBoxResult, "textBoxResult");
             this.textBoxResult.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBoxResult.Name = "textBoxResult";

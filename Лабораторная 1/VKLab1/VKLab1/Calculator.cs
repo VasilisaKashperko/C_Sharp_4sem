@@ -84,32 +84,53 @@ namespace VKLab1
 
         private void buttonDoubleVowels_Click(object sender, EventArgs e)
         {
+            textBoxResult.Text = "";
             char[] vowels = {'а', 'и', 'о', 'у', 'ы', 'е', 'э', 'я', 'ю', 'А', 'И', 'О', 'У', 'Ы', 'Е', 'Э', 'Я', 'Ю'};
             char[] stringFirst = textBoxForTheFirst.Text.ToCharArray();
             char[] stringSecond = textBoxForTheSecond.Text.ToCharArray();
+            var res = new List<char>();
 
             if (textBoxForTheFirst.Text != "Введите строку" && textBoxForTheSecond.Text == "Введите строку")
             {
-                for (int n = 0; n == stringFirst.Length - 1; n++)
+
+                foreach (char vow in stringFirst)
                 {
-                    for (int i = 0; i == vowels.Length - 1; i++)
+                    if (vowels.Contains(vow))
                     {
-                        if (textBoxForTheFirst.Text.Contains(vowels[i]))
-                        {
-                            int foundVowel = textBoxForTheFirst.Text.IndexOf(vowels[i]);
-                            textBoxResult.Text = textBoxForTheFirst.Text.Insert(foundVowel, vowels[i].ToString());
-                        }
-                        else
-                        {
-                            textBoxResult.Text = "Гласных в строке нет!";
-                        }
+                        res.Add(vow);
+                        res.Add(vow);
                     }
+                    else
+                    {
+                        res.Add(vow);
+                    }
+                }
+
+                foreach (var result in res)
+                {
+                    textBoxResult.Text += result;
                 }
             }
 
             if (textBoxForTheSecond.Text != "Введите строку" && textBoxForTheFirst.Text == "Введите строку")
             {
+                foreach (char vow in stringSecond)
+                {
+                    if (vowels.Contains(vow))
+                    {
+                        res.Add(vow);
+                        res.Add(vow);
+                    }
+                    else
+                    {
+                        res.Add(vow);
+                    }
+                }
 
+                foreach (var result in res)
+                {
+                    textBoxResult.Text += result;
+                }
             }
 
             if (textBoxForTheSecond.Text != "Введите строку" && textBoxForTheFirst.Text != "Введите строку")
@@ -121,6 +142,81 @@ namespace VKLab1
             {
                 textBoxResult.Text = "Введите, пожалуйста, что-то в качестве строки";
             }
+        }
+
+        #endregion
+
+        #region [Styles for buttons]
+        private void buttonConcat_MouseEnter(object sender, EventArgs e)
+        {
+            buttonConcat.BackColor = Color.FromArgb(95, 196, 12);
+            buttonConcat.ForeColor = Color.FromArgb(63, 63, 63);
+        }
+
+        private void buttonConcat_MouseLeave(object sender, EventArgs e)
+        {
+            buttonConcat.BackColor = Color.FromArgb(63, 63, 63);
+            buttonConcat.ForeColor = Color.FromArgb(221, 245, 250);
+        }
+
+        private void buttonReplacement_MouseEnter(object sender, EventArgs e)
+        {
+            buttonReplacement.BackColor = Color.FromArgb(95, 196, 12);
+            buttonReplacement.ForeColor = Color.FromArgb(63, 63, 63);
+        }
+
+        private void buttonReplacement_MouseLeave(object sender, EventArgs e)
+        {
+            buttonReplacement.BackColor = Color.FromArgb(63, 63, 63);
+            buttonReplacement.ForeColor = Color.FromArgb(221, 245, 250);
+        }
+
+        private void buttonGetSymbol_MouseEnter(object sender, EventArgs e)
+        {
+            buttonGetSymbol.BackColor = Color.FromArgb(95, 196, 12);
+            buttonGetSymbol.ForeColor = Color.FromArgb(63, 63, 63);
+        }
+
+        private void buttonGetSymbol_MouseLeave(object sender, EventArgs e)
+        {
+            buttonGetSymbol.BackColor = Color.FromArgb(63, 63, 63);
+            buttonGetSymbol.ForeColor = Color.FromArgb(221, 245, 250);
+        }
+
+        private void buttonCut_MouseEnter(object sender, EventArgs e)
+        {
+            buttonCut.BackColor = Color.FromArgb(95, 196, 12);
+            buttonCut.ForeColor = Color.FromArgb(63, 63, 63);
+        }
+
+        private void buttonCut_MouseLeave(object sender, EventArgs e)
+        {
+            buttonCut.BackColor = Color.FromArgb(63, 63, 63);
+            buttonCut.ForeColor = Color.FromArgb(221, 245, 250);
+        }
+
+        private void buttonLength_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLength.BackColor = Color.FromArgb(95, 196, 12);
+            buttonLength.ForeColor = Color.FromArgb(63, 63, 63);
+        }
+
+        private void buttonLength_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLength.BackColor = Color.FromArgb(63, 63, 63);
+            buttonLength.ForeColor = Color.FromArgb(221, 245, 250);
+        }
+
+        private void buttonDoubleVowels_MouseEnter(object sender, EventArgs e)
+        {
+            buttonDoubleVowels.BackColor = Color.FromArgb(95, 196, 12);
+            buttonDoubleVowels.ForeColor = Color.FromArgb(63, 63, 63);
+        }
+
+        private void buttonDoubleVowels_MouseLeave(object sender, EventArgs e)
+        {
+            buttonDoubleVowels.BackColor = Color.FromArgb(63, 63, 63);
+            buttonDoubleVowels.ForeColor = Color.FromArgb(221, 245, 250);
         }
 
         #endregion
