@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VKLab1
+namespace VKExampleLab1
 {
     public partial class Calculator : Form
     {
@@ -220,5 +220,10 @@ namespace VKLab1
         }
 
         #endregion
+
+        private void Calculator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
