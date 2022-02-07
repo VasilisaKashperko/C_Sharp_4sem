@@ -221,9 +221,5 @@ namespace VKExampleLab1
 
         #endregion
 
-        private void Calculator_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -199,7 +199,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonConcat);
             this.Name = "Calculator";
-            this.Load += new System.EventHandler(this.Calculator_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
