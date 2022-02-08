@@ -176,7 +176,7 @@ namespace VKLab1
                     ResultBrClothes.Text = $"16";
                 }
 
-                if(height <0 || bust <0 || waist <0 || hip < 0)
+                if(height <= 0 || bust <= 0 || waist <= 0 || hip <= 0)
                 {
                     throw new ArgumentException();
                 }
