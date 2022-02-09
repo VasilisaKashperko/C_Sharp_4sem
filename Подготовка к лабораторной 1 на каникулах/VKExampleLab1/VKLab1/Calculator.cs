@@ -92,7 +92,6 @@ namespace VKExampleLab1
 
             if (textBoxForTheFirst.Text != "Введите строку" && textBoxForTheSecond.Text == "Введите строку")
             {
-
                 foreach (char vow in stringFirst)
                 {
                     if (vowels.Contains(vow))
