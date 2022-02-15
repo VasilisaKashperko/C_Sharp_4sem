@@ -84,8 +84,9 @@ namespace VKLab2
         {
             return address.Country + ", " + address.City + ", " + address.District + ". "
                 + address.Street + ", " + address.House + "," + address.Housing + ", " + address.NumberOfFlat + ". "
-                + Footage + NumberOfRooms + Kitchen + Bathroom + Wc + Balcony + YearOfConstruction + Floor
-                + "\n\n";
+                + Footage + ", " + NumberOfRooms + ", " + YearOfConstruction + ", " + Floor + ". "
+                + room.Square + ", " + room.NumberOfWindows + ", " + room.Side
+                + ". \n\n";
         }
     }
 }
