@@ -6,24 +6,17 @@ using System.Threading.Tasks;
 
 namespace VKLab2
 {
-    public enum SideOfWindows
-    {
-        noInfo = 0,
-        southern, // южная
-        southwest // юго-запад
-    }
-
     public class Room
     {
         private int _square;
         private int _numberOfWindows;
-        private SideOfWindows _side;
+        private string _side;
         
         public int Square { get => _square; set { _square = value; } }
         public int NumberOfWindows { get => _numberOfWindows; set { _numberOfWindows = value; } }
-        public SideOfWindows Side { get => _side; set { _side = value; } }
+        public string Side { get => _side; set { _side = value; } }
 
-        public Room(int square, int numberOfWindows, SideOfWindows s)
+        public Room(int square, int numberOfWindows, string s)
         {
             Square = square;
             NumberOfWindows = numberOfWindows;
@@ -34,7 +27,7 @@ namespace VKLab2
         {
             Square = 0;
             NumberOfWindows = 0;
-            Side = 0;
+            Side = "";
         }
     }
 }
