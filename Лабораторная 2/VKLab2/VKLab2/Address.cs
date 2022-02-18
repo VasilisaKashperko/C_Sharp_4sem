@@ -18,7 +18,7 @@ namespace VKLab2
         private int _numberOfFlat;
 
         [Required]
-        [StringLength(30, ErrorMessage = "Вы ввели слишком длинное название страны.", MinimumLength = 3)]
+        [StringLength(30,  ErrorMessage = "Вы ввели слишком длинное название страны.", MinimumLength = 3)]
         public string Country { get => _country; set { _country = value; } }
 
         [Required]

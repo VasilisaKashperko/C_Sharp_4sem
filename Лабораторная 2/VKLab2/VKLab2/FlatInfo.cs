@@ -52,9 +52,11 @@ namespace VKLab2
         public Address address;
 
         [Required]
-        public Room room;
+        public List<Room> rooms;
 
-        public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, Room r)
+        public List<int> NumOfRooms;
+
+        public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, List<Room> r)
         {
             Footage = footage;
             NumberOfRooms = numberOfRooms;
@@ -65,7 +67,7 @@ namespace VKLab2
             YearOfConstruction = yearOfConstruction;
             Floor = floor;
             address = add;
-            room = r;
+            rooms = r;
         }
 
         public FlatInfo()
@@ -85,8 +87,8 @@ namespace VKLab2
             return address.Country + ", " + address.City + ", " + address.District + ". "
                 + address.Street + ", " + address.House + "," + address.Housing + ", " + address.NumberOfFlat + ". "
                 + Footage + ", " + NumberOfRooms + ", " + YearOfConstruction + ", " + Floor + ". "
-                + room.Square + ", " + room.NumberOfWindows + ", " + room.Side
                 + ". \n\n";
         }
     }
+
 }
