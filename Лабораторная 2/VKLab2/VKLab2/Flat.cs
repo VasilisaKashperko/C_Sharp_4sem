@@ -70,6 +70,10 @@ namespace VKLab2
 
             flat.NumOfRooms = roomNumbers;
 
+            var bindingSource = new BindingSource();
+            bindingSource.DataSource = roomNumbers;
+            comboBoxFlat.DataSource = bindingSource.DataSource;
+
             flat.Kitchen = checkBoxKitchen.Checked;
             flat.Bathroom = checkBoxBathroom.Checked;
             flat.Wc = checkBoxWC.Checked;

@@ -21,6 +21,14 @@ namespace VKLab2
         private int _floor;
 
         [Required]
+        public Address address;
+
+        [Required]
+        public List<Room> rooms;
+
+        public List<int> NumOfRooms;
+
+        [Required]
         [Range(1, 50, ErrorMessage = "Вы ввели недопустимое количество метража квартиры.")]
         public int Footage { get => _footage; set { _footage = value; } }
 
@@ -47,14 +55,6 @@ namespace VKLab2
         [Required]
         [Range(1, 20, ErrorMessage = "Вы ввели несуществующий этаж.")]
         public int Floor { get => _floor; set { _floor = value; } }
-
-        [Required]
-        public Address address;
-
-        [Required]
-        public List<Room> rooms;
-
-        public List<int> NumOfRooms;
 
         public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, List<Room> r)
         {

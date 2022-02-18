@@ -66,10 +66,11 @@
             this.textBoxNumOfWindows = new System.Windows.Forms.TextBox();
             this.maskedTextBoxYear = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxFlat = new System.Windows.Forms.ComboBox();
+            this.flatInfoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxSide = new System.Windows.Forms.ComboBox();
             this.trackBarNumOfRooms = new System.Windows.Forms.TrackBar();
             this.labelOne = new System.Windows.Forms.Label();
-            this.labelEleven = new System.Windows.Forms.Label();
+            this.labelSix = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -79,14 +80,15 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.myTimer = new System.Windows.Forms.Timer(this.components);
-            this.flatInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonConfirmFlat = new System.Windows.Forms.Button();
             this.flatInfoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.flatInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lableAddress
@@ -448,14 +450,17 @@
             // 
             // comboBoxFlat
             // 
-            this.comboBoxFlat.DataSource = this.flatInfoBindingSource1;
-            this.comboBoxFlat.DisplayMember = "NumberOfRooms";
+            this.comboBoxFlat.DataSource = this.flatInfoBindingSource2;
             this.comboBoxFlat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxFlat.FormattingEnabled = true;
             this.comboBoxFlat.Location = new System.Drawing.Point(1005, 53);
             this.comboBoxFlat.Name = "comboBoxFlat";
             this.comboBoxFlat.Size = new System.Drawing.Size(50, 30);
             this.comboBoxFlat.TabIndex = 40;
+            // 
+            // flatInfoBindingSource2
+            // 
+            this.flatInfoBindingSource2.DataSource = typeof(VKLab2.FlatInfo);
             // 
             // comboBoxSide
             // 
@@ -473,28 +478,30 @@
             // 
             this.trackBarNumOfRooms.BackColor = System.Drawing.Color.LightCyan;
             this.trackBarNumOfRooms.Location = new System.Drawing.Point(607, 210);
-            this.trackBarNumOfRooms.Maximum = 9;
+            this.trackBarNumOfRooms.Maximum = 6;
+            this.trackBarNumOfRooms.Minimum = 1;
             this.trackBarNumOfRooms.Name = "trackBarNumOfRooms";
             this.trackBarNumOfRooms.Size = new System.Drawing.Size(148, 56);
             this.trackBarNumOfRooms.TabIndex = 42;
+            this.trackBarNumOfRooms.Value = 1;
             // 
             // labelOne
             // 
             this.labelOne.AutoSize = true;
-            this.labelOne.Location = new System.Drawing.Point(618, 243);
+            this.labelOne.Location = new System.Drawing.Point(617, 243);
             this.labelOne.Name = "labelOne";
             this.labelOne.Size = new System.Drawing.Size(15, 17);
             this.labelOne.TabIndex = 43;
             this.labelOne.Text = "1";
             // 
-            // labelEleven
+            // labelSix
             // 
-            this.labelEleven.AutoSize = true;
-            this.labelEleven.Location = new System.Drawing.Point(728, 243);
-            this.labelEleven.Name = "labelEleven";
-            this.labelEleven.Size = new System.Drawing.Size(22, 17);
-            this.labelEleven.TabIndex = 44;
-            this.labelEleven.Text = "10";
+            this.labelSix.AutoSize = true;
+            this.labelSix.Location = new System.Drawing.Point(731, 243);
+            this.labelSix.Name = "labelSix";
+            this.labelSix.Size = new System.Drawing.Size(15, 17);
+            this.labelSix.TabIndex = 44;
+            this.labelSix.Text = "6";
             // 
             // panel1
             // 
@@ -528,20 +535,20 @@
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1156, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 25);
             this.toolStrip1.TabIndex = 48;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(140, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(140, 22);
             this.toolStripLabel1.Text = "Сохранить данные";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(182, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(182, 22);
             this.toolStripLabel2.Text = "Чтение данных из файла";
             // 
             // statusStrip
@@ -568,10 +575,6 @@
             // 
             this.myTimer.Tick += new System.EventHandler(this.myTimer_Tick);
             // 
-            // flatInfoBindingSource
-            // 
-            this.flatInfoBindingSource.DataSource = typeof(VKLab2.FlatInfo);
-            // 
             // buttonConfirmFlat
             // 
             this.buttonConfirmFlat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -587,6 +590,10 @@
             // 
             this.flatInfoBindingSource1.DataSource = typeof(VKLab2.FlatInfo);
             // 
+            // flatInfoBindingSource
+            // 
+            this.flatInfoBindingSource.DataSource = typeof(VKLab2.FlatInfo);
+            // 
             // Flat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -596,7 +603,7 @@
             this.Controls.Add(this.buttonConfirmFlat);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.labelEleven);
+            this.Controls.Add(this.labelSix);
             this.Controls.Add(this.labelOne);
             this.Controls.Add(this.trackBarNumOfRooms);
             this.Controls.Add(this.comboBoxSide);
@@ -645,13 +652,14 @@
             this.Name = "Flat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подсчет стоимости квартиры";
+            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -698,7 +706,7 @@
         private System.Windows.Forms.ComboBox comboBoxSide;
         private System.Windows.Forms.TrackBar trackBarNumOfRooms;
         private System.Windows.Forms.Label labelOne;
-        private System.Windows.Forms.Label labelEleven;
+        private System.Windows.Forms.Label labelSix;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -711,6 +719,7 @@
         private System.Windows.Forms.BindingSource flatInfoBindingSource;
         private System.Windows.Forms.Button buttonConfirmFlat;
         private System.Windows.Forms.BindingSource flatInfoBindingSource1;
+        private System.Windows.Forms.BindingSource flatInfoBindingSource2;
     }
 }
 
