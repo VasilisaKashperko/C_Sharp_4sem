@@ -66,7 +66,6 @@
             this.textBoxNumOfWindows = new System.Windows.Forms.TextBox();
             this.maskedTextBoxYear = new System.Windows.Forms.MaskedTextBox();
             this.comboBoxFlat = new System.Windows.Forms.ComboBox();
-            this.flatInfoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxSide = new System.Windows.Forms.ComboBox();
             this.trackBarNumOfRooms = new System.Windows.Forms.TrackBar();
             this.labelOne = new System.Windows.Forms.Label();
@@ -81,14 +80,11 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.myTimer = new System.Windows.Forms.Timer(this.components);
             this.buttonConfirmFlat = new System.Windows.Forms.Button();
-            this.flatInfoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.flatInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource2)).BeginInit();
+            this.buttonConfirmOneRoom = new System.Windows.Forms.Button();
+            this.buttonConfirmRooms = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lableAddress
@@ -293,7 +289,7 @@
             // buttonConfirmAddress
             // 
             this.buttonConfirmAddress.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonConfirmAddress.Location = new System.Drawing.Point(28, 492);
+            this.buttonConfirmAddress.Location = new System.Drawing.Point(31, 492);
             this.buttonConfirmAddress.Name = "buttonConfirmAddress";
             this.buttonConfirmAddress.Size = new System.Drawing.Size(294, 37);
             this.buttonConfirmAddress.TabIndex = 20;
@@ -346,7 +342,7 @@
             this.textBoxHousing.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxHousing.Location = new System.Drawing.Point(124, 372);
             this.textBoxHousing.Name = "textBoxHousing";
-            this.textBoxHousing.Size = new System.Drawing.Size(164, 30);
+            this.textBoxHousing.Size = new System.Drawing.Size(74, 30);
             this.textBoxHousing.TabIndex = 26;
             // 
             // textBoxNumOfFlat
@@ -450,17 +446,13 @@
             // 
             // comboBoxFlat
             // 
-            this.comboBoxFlat.DataSource = this.flatInfoBindingSource2;
             this.comboBoxFlat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxFlat.FormattingEnabled = true;
             this.comboBoxFlat.Location = new System.Drawing.Point(1005, 53);
             this.comboBoxFlat.Name = "comboBoxFlat";
             this.comboBoxFlat.Size = new System.Drawing.Size(50, 30);
             this.comboBoxFlat.TabIndex = 40;
-            // 
-            // flatInfoBindingSource2
-            // 
-            this.flatInfoBindingSource2.DataSource = typeof(VKLab2.FlatInfo);
+            this.comboBoxFlat.SelectedIndexChanged += new System.EventHandler(this.comboBoxFlat_SelectedIndexChanged);
             // 
             // comboBoxSide
             // 
@@ -488,7 +480,7 @@
             // labelOne
             // 
             this.labelOne.AutoSize = true;
-            this.labelOne.Location = new System.Drawing.Point(617, 243);
+            this.labelOne.Location = new System.Drawing.Point(614, 243);
             this.labelOne.Name = "labelOne";
             this.labelOne.Size = new System.Drawing.Size(15, 17);
             this.labelOne.TabIndex = 43;
@@ -497,7 +489,7 @@
             // labelSix
             // 
             this.labelSix.AutoSize = true;
-            this.labelSix.Location = new System.Drawing.Point(731, 243);
+            this.labelSix.Location = new System.Drawing.Point(736, 243);
             this.labelSix.Name = "labelSix";
             this.labelSix.Size = new System.Drawing.Size(15, 17);
             this.labelSix.TabIndex = 44;
@@ -586,13 +578,27 @@
             this.buttonConfirmFlat.UseVisualStyleBackColor = true;
             this.buttonConfirmFlat.Click += new System.EventHandler(this.buttonConfirmFlat_Click);
             // 
-            // flatInfoBindingSource1
+            // buttonConfirmOneRoom
             // 
-            this.flatInfoBindingSource1.DataSource = typeof(VKLab2.FlatInfo);
+            this.buttonConfirmOneRoom.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonConfirmOneRoom.Location = new System.Drawing.Point(826, 277);
+            this.buttonConfirmOneRoom.Name = "buttonConfirmOneRoom";
+            this.buttonConfirmOneRoom.Size = new System.Drawing.Size(294, 37);
+            this.buttonConfirmOneRoom.TabIndex = 51;
+            this.buttonConfirmOneRoom.Text = "Добавить комнату";
+            this.buttonConfirmOneRoom.UseVisualStyleBackColor = true;
+            this.buttonConfirmOneRoom.Click += new System.EventHandler(this.buttonConfirmOneRoom_Click);
             // 
-            // flatInfoBindingSource
+            // buttonConfirmRooms
             // 
-            this.flatInfoBindingSource.DataSource = typeof(VKLab2.FlatInfo);
+            this.buttonConfirmRooms.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonConfirmRooms.Location = new System.Drawing.Point(826, 322);
+            this.buttonConfirmRooms.Name = "buttonConfirmRooms";
+            this.buttonConfirmRooms.Size = new System.Drawing.Size(294, 37);
+            this.buttonConfirmRooms.TabIndex = 52;
+            this.buttonConfirmRooms.Text = "Принять данные";
+            this.buttonConfirmRooms.UseVisualStyleBackColor = true;
+            this.buttonConfirmRooms.Click += new System.EventHandler(this.buttonConfirmRooms_Click);
             // 
             // Flat
             // 
@@ -600,6 +606,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(1156, 567);
+            this.Controls.Add(this.buttonConfirmRooms);
+            this.Controls.Add(this.buttonConfirmOneRoom);
             this.Controls.Add(this.buttonConfirmFlat);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip1);
@@ -652,14 +660,11 @@
             this.Name = "Flat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подсчет стоимости квартиры";
-            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flatInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -716,10 +721,9 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Timer myTimer;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
-        private System.Windows.Forms.BindingSource flatInfoBindingSource;
         private System.Windows.Forms.Button buttonConfirmFlat;
-        private System.Windows.Forms.BindingSource flatInfoBindingSource1;
-        private System.Windows.Forms.BindingSource flatInfoBindingSource2;
+        private System.Windows.Forms.Button buttonConfirmOneRoom;
+        private System.Windows.Forms.Button buttonConfirmRooms;
     }
 }
 

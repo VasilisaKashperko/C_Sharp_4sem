@@ -42,12 +42,6 @@ namespace VKLab2
                 flatAddress.NumberOfFlat = Convert.ToInt32(textBoxNumOfFlat.Text);
 
                 flat.address = flatAddress;
-
-                //flatRoom.Square = Convert.ToInt32(textBoxSquare.Text);
-                //flatRoom.NumberOfWindows = Convert.ToInt32(textBoxNumOfWindows.Text);
-                //flatRoom.Side = comboBoxSide.Text;
-
-                //flat.rooms.Add(flatRoom);
             }
             catch (FormatException)
             {
@@ -57,29 +51,64 @@ namespace VKLab2
 
         private void buttonConfirmFlat_Click(object sender, EventArgs e)
         {
-            flat.Footage = Convert.ToInt32(textBoxFootage.Text);
-            flat.Floor = Convert.ToInt32(textBoxFloor.Text);
-            flat.NumberOfRooms = trackBarNumOfRooms.Value;
-
-            List<int> roomNumbers = new List<int>();
-
-            for (int i = 1; i <= flat.NumberOfRooms; i++)
+            try
             {
-                roomNumbers.Add(i);
+                flat.Footage = Convert.ToInt32(textBoxFootage.Text);
+                flat.Floor = Convert.ToInt32(textBoxFloor.Text);
+                flat.NumberOfRooms = trackBarNumOfRooms.Value;
+
+                List<int> roomNumbers = new List<int>();
+
+                for (int i = 1; i <= flat.NumberOfRooms; i++)
+                {
+                    roomNumbers.Add(i);
+                }
+
+                flat.NumOfRooms = roomNumbers;
+
+                var bindingSource = new BindingSource();
+                bindingSource.DataSource = roomNumbers;
+                comboBoxFlat.DataSource = bindingSource.DataSource;
+
+                flat.Kitchen = checkBoxKitchen.Checked;
+                flat.Bathroom = checkBoxBathroom.Checked;
+                flat.Wc = checkBoxWC.Checked;
+                flat.Balcony = checkBoxBalcony.Checked;
+
+                flat.YearOfConstruction = Convert.ToInt32(maskedTextBoxYear.Text);
             }
+            catch (FormatException)
+            {
+                MessageBox.Show("Введите числа, вместо слов, где подразумевается число.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
-            flat.NumOfRooms = roomNumbers;
+        //Dictionary<int, object> rooms = new Dictionary<int, object>();
+        List<Room> rooms = new List<Room>();
 
-            var bindingSource = new BindingSource();
-            bindingSource.DataSource = roomNumbers;
-            comboBoxFlat.DataSource = bindingSource.DataSource;
+        private void buttonConfirmOneRoom_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rooms.Add(new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
+                //if(rooms.Contains(Room == this.Room))
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Введите числа, вместо слов, где подразумевается число.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        
+        private void buttonConfirmRooms_Click(object sender, EventArgs e)
+        {
+            flat.AllRooms = rooms;
+        }
 
-            flat.Kitchen = checkBoxKitchen.Checked;
-            flat.Bathroom = checkBoxBathroom.Checked;
-            flat.Wc = checkBoxWC.Checked;
-            flat.Balcony = checkBoxBalcony.Checked;
-
-            flat.YearOfConstruction = Convert.ToInt32(maskedTextBoxYear.Text);
+        private void comboBoxFlat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxSquare.Text = "";
+            textBoxNumOfWindows.Text = "";
+            comboBoxSide.SelectedItem = null;
         }
     }
 }

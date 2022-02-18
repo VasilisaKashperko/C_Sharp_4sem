@@ -24,7 +24,7 @@ namespace VKLab2
         public Address address;
 
         [Required]
-        public List<Room> rooms;
+        public List<Room> AllRooms;
 
         public List<int> NumOfRooms;
 
@@ -67,7 +67,7 @@ namespace VKLab2
             YearOfConstruction = yearOfConstruction;
             Floor = floor;
             address = add;
-            rooms = r;
+            AllRooms = r;
         }
 
         public FlatInfo()
