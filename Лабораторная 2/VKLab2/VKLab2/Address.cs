@@ -17,31 +17,30 @@ namespace VKLab2
         private int _housing;
         private int _numberOfFlat;
 
-        [Required]
-        [StringLength(30,  ErrorMessage = "Вы ввели слишком длинное название страны.", MinimumLength = 3)]
+        [Required(ErrorMessage = "Требуется поле Страна")]
+        [StringLength(30, ErrorMessage = "Вы ввели слишком короткое или длинное название страны.", MinimumLength = 2)]
         public string Country { get => _country; set { _country = value; } }
 
         [Required]
-        [StringLength(30, ErrorMessage = "Вы ввели слишком длинное название города.", MinimumLength = 3)]
+        [StringLength(30, ErrorMessage = "Вы ввели слишком короткое или длинное название города.", MinimumLength = 2)]
         public string City { get => _city; set { _city = value; } }
 
         [Required]
-        [StringLength(30, ErrorMessage = "Вы ввели слишком длинное название региона.", MinimumLength = 3)]
+        [StringLength(30, ErrorMessage = "Вы ввели слишком короткое или длинное название региона.", MinimumLength = 2)]
         public string District { get => _district; set { _district = value; } }
 
         [Required]
-        [StringLength(30, ErrorMessage = "Вы ввели слишком длинное название улицы.", MinimumLength = 3)]
+        [StringLength(30, ErrorMessage = "Вы ввели слишком короткое или длинное название улицы.", MinimumLength = 2)]
         public string Street { get => _street; set { _street = value; } }
 
         [Required]
         [Range(1, 500, ErrorMessage = "Вы ввели несуществующий номер дома.")]
         public int House { get => _house; set { _house = value; } }
 
-        [Range(1, 10, ErrorMessage = "Вы ввели несуществующий корпус дома.")]
         public int Housing { get => _housing; set { _housing = value; } }
 
         [Required]
-        [Range(1, 50, ErrorMessage = "Вы ввели недопустимое количество квартир.")]
+        [Range(1, 300, ErrorMessage = "Вы ввели недопустимый номер квартиры.")]
         public int NumberOfFlat { get => _numberOfFlat; set { _numberOfFlat = value; } }
 
         public Address(string country, string city, string district, string street, int house, int housing, int numberOfFlat)

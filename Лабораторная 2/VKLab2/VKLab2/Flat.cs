@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,7 +16,6 @@ namespace VKLab2
         public Flat()
         {
             InitializeComponent();
-
             myTimer.Enabled = true;
         }
 
@@ -35,22 +35,78 @@ namespace VKLab2
             try
             {
                 Address flatAddress = new Address();
+                int result;
 
-                flatAddress.Country = textBoxCounty.Text;
-                flatAddress.City = textBoxCity.Text;
-                flatAddress.District = textBoxDistrict.Text;
-                flatAddress.Street = textBoxStreet.Text;
+                if (int.TryParse(textBoxCounty.Text, out result) != true)
+                {
+                    flatAddress.Country = textBoxCounty.Text;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+
+                if (int.TryParse(textBoxCity.Text, out result) != true)
+                {
+                    flatAddress.City = textBoxCity.Text;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+
+                if (int.TryParse(textBoxDistrict.Text, out result) != true)
+                {
+                    flatAddress.District = textBoxDistrict.Text;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+
+                if (int.TryParse(textBoxStreet.Text, out result) != true)
+                {
+                    flatAddress.Street = textBoxStreet.Text;
+                }
+                else
+                {
+                    throw new Exception();
+                }
 
                 flatAddress.House = Convert.ToInt32(textBoxHouse.Text);
-                flatAddress.Housing = Convert.ToInt32(textBoxHousing.Text);
+
+                if (textBoxHousing.Text != "")
+                {
+                    flatAddress.Housing = Convert.ToInt32(textBoxHousing.Text);
+                }
+                else
+                {
+                    flatAddress.Housing = 0;
+                }
+
                 flatAddress.NumberOfFlat = Convert.ToInt32(textBoxNumOfFlat.Text);
 
                 flat.address = flatAddress;
+
+                var results = new List<ValidationResult>();
+                var context = new ValidationContext(flatAddress);
+
+                if (!Validator.TryValidateObject(flatAddress, context, results, true))
+                {
+                    foreach (var error in results)
+                    {
+                        MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
 
             catch (FormatException)
             {
                 MessageBox.Show($"Введите числа в поля АДРЕСА, где подразумевается число, вместо слов.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Введите слова в поля АДРЕСА, где подразумеваются названия, вместо чисел.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {
@@ -90,6 +146,17 @@ namespace VKLab2
                 flat.Balcony = checkBoxBalcony.Checked;
 
                 flat.YearOfConstruction = Convert.ToInt32(maskedTextBoxYear.Text);
+
+                var results = new List<ValidationResult>();
+                var context = new ValidationContext(flat);
+
+                if (!Validator.TryValidateObject(flat, context, results, true))
+                {
+                    foreach (var error in results)
+                    {
+                        MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
             }
             catch (FormatException)
             {
@@ -124,14 +191,35 @@ namespace VKLab2
                 }
                 else
                 {
-                    rooms.Add(Convert.ToInt32(comboBoxFlat.Text), new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
+                    Room roomForCheck = new Room();
 
-                    foreach (var r in rooms.Values)
+                    roomForCheck.Number = Convert.ToInt32(comboBoxFlat.Text);
+                    roomForCheck.NumberOfWindows = Convert.ToInt32(textBoxNumOfWindows.Text);
+                    roomForCheck.Square = Convert.ToInt32(textBoxSquare.Text);
+                    roomForCheck.Side = comboBoxSide.Text;
+
+                    var results = new List<ValidationResult>();
+                    var context = new ValidationContext(roomForCheck);
+
+                    if (!Validator.TryValidateObject(roomForCheck, context, results, true))
                     {
-                        info += $"Номер: {r.Number} Площадь: {r.Square} Кол-во окон: {r.NumberOfWindows} Сторона: {r.Side}\n";
+                        foreach (var error in results)
+                        {
+                            MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
 
-                    richTextBoxRooms.Text = info;
+                    else
+                    {
+                        rooms.Add(Convert.ToInt32(comboBoxFlat.Text), new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
+
+                        foreach (var r in rooms.Values)
+                        {
+                            info += $"Номер: {r.Number} Площадь: {r.Square} Кол-во окон: {r.NumberOfWindows} Сторона: {r.Side}\n";
+                        }
+
+                        richTextBoxRooms.Text = info;
+                    }
                 }
             }
             catch (FormatException)
@@ -163,7 +251,7 @@ namespace VKLab2
             textBoxDistrict.Text = null;
             textBoxStreet.Text = null;
             textBoxHouse.Text = null;
-            textBoxHousing.Text = null;
+            textBoxHousing.Text = "";
             textBoxNumOfFlat.Text = null;
 
             textBoxFootage.Text = null;

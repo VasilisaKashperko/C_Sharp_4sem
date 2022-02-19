@@ -29,27 +29,23 @@ namespace VKLab2
         public List<int> NumOfRooms;
 
         [Required]
-        [Range(1, 50, ErrorMessage = "Вы ввели недопустимое количество метража квартиры.")]
+        [Range(50, 500, ErrorMessage = "Вы ввели недопустимое количество метража квартиры.")]
         public int Footage { get => _footage; set { _footage = value; } }
 
         [Required]
-        [Range(1, 5, ErrorMessage = "Вы ввели недопустимое количество комнат в квартире.")]
+        [Range(1, 6, ErrorMessage = "Вы ввели недопустимое количество комнат в квартире.")]
         public int NumberOfRooms { get => _numberOfRooms; set { _numberOfRooms = value; } }
 
-        [Required]
         public bool Kitchen { get => _kitchen; set { _kitchen = value; } }
 
-        [Required]
         public bool Bathroom { get => _bathroom; set { _bathroom = value; } }
 
-        [Required]
         public bool Wc { get => _wc; set { _wc = value; } }
 
-        [Required]
         public bool Balcony { get => _balcony; set { _balcony = value; } }
 
         [Required]
-        [Range(1970, 2023, ErrorMessage = "Вы ввели несуществующий год постройки.")]
+        [Range(1960, 2023, ErrorMessage = "Вы ввели недопустимый год постройки.")]
         public int YearOfConstruction { get => _yearOfConstruction; set { _yearOfConstruction = value; } }
 
         [Required]
