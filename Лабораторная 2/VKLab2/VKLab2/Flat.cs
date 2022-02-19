@@ -19,10 +19,14 @@ namespace VKLab2
             myTimer.Enabled = true;
         }
 
+        #region [Timer]
         private void myTimer_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabel.Text = "Дата и время: " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
         }
+        #endregion
+
+        #region [Address]
 
         FlatInfo flat = new FlatInfo();
 
@@ -44,20 +48,25 @@ namespace VKLab2
                 flat.address = flatAddress;
             }
 
-            catch (FormatException ex)
+            catch (FormatException)
             {
-                MessageBox.Show($"Введите числа в поля АДРЕСА, где подразумевается число, вместо слов.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Введите числа в поля АДРЕСА, где подразумевается число, вместо слов.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {
                 MessageBox.Show("Данные об адресе записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        #endregion
 
+        #region [Flat]
         private void buttonConfirmFlat_Click(object sender, EventArgs e)
         {
             try
             {
+                rooms.Clear();
+                richTextBoxRooms.Text = "Данные о комнатах:\n";
+
                 flat.Footage = Convert.ToInt32(textBoxFootage.Text);
                 flat.Floor = Convert.ToInt32(textBoxFloor.Text);
                 flat.NumberOfRooms = trackBarNumOfRooms.Value;
@@ -82,15 +91,24 @@ namespace VKLab2
 
                 flat.YearOfConstruction = Convert.ToInt32(maskedTextBoxYear.Text);
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
-                MessageBox.Show($"Введите числа в поля КВАРТИРЫ, где подразумевается число, вместо слов.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Введите числа в поля КВАРТИРЫ, где подразумевается число, вместо слов.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {
                 MessageBox.Show("Данные о квартире записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        private void comboBoxFlat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxSquare.Text = "";
+            textBoxNumOfWindows.Text = "";
+            comboBoxSide.SelectedItem = null;
+        }
+        #endregion
+
+        #region [Rooms]
 
         Dictionary<int, Room> rooms = new Dictionary<int, Room>();
 
@@ -98,15 +116,15 @@ namespace VKLab2
         {
             try
             {
+                var info = "Данные о комнатах:\n";
+
                 if (rooms.ContainsKey(Convert.ToInt32(comboBoxFlat.Text)))
                 {
-                    throw new ArgumentException();
+                    throw new WarningException();
                 }
                 else
                 {
                     rooms.Add(Convert.ToInt32(comboBoxFlat.Text), new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
-
-                    var info = "Данные о комнатах:\n";
 
                     foreach (var r in rooms.Values)
                     {
@@ -116,13 +134,13 @@ namespace VKLab2
                     richTextBoxRooms.Text = info;
                 }
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
-                MessageBox.Show($"Введите числа в поля КОМНАТЫ, где подразумевается число, вместо слов.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Введите числа в поля КОМНАТЫ, где подразумевается число, вместо слов.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (ArgumentException ex)
+            catch (WarningException)
             {
-                MessageBox.Show($"Данные о такой комнате уже существуют.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Данные о такой комнате уже существуют.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {
@@ -135,11 +153,36 @@ namespace VKLab2
             flat.AllRooms = rooms;
         }
 
-        private void comboBoxFlat_SelectedIndexChanged(object sender, EventArgs e)
+        #endregion
+
+        #region [Recycle bin]
+        private void toolStripRecycleBin_Click(object sender, EventArgs e)
         {
-            textBoxSquare.Text = "";
-            textBoxNumOfWindows.Text = "";
-            comboBoxSide.SelectedItem = null;
+            textBoxCounty.Text = null;
+            textBoxCity.Text = null;
+            textBoxDistrict.Text = null;
+            textBoxStreet.Text = null;
+            textBoxHouse.Text = null;
+            textBoxHousing.Text = null;
+            textBoxNumOfFlat.Text = null;
+
+            textBoxFootage.Text = null;
+            textBoxFloor.Text = null;
+            trackBarNumOfRooms.Value = 1;
+            checkBoxKitchen.Checked = false;
+            checkBoxBathroom.Checked = false;
+            checkBoxWC.Checked = false;
+            checkBoxBalcony.Checked = false;
+            maskedTextBoxYear.Text = null;
+
+            comboBoxFlat.SelectedIndex = -1;
+            textBoxSquare.Text = null;
+            textBoxNumOfWindows.Text = null;
+            comboBoxSide.SelectedIndex = -1;
+
+            rooms.Clear();
+            richTextBoxRooms.Text = "Данные о комнатах:\n";
         }
+        #endregion
     }
 }

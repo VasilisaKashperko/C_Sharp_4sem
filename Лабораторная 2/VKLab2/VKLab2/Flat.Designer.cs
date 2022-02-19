@@ -74,16 +74,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripRecycleBin = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.myTimer = new System.Windows.Forms.Timer(this.components);
             this.buttonConfirmFlat = new System.Windows.Forms.Button();
             this.buttonConfirmOneRoom = new System.Windows.Forms.Button();
-            this.buttonConfirmRooms = new System.Windows.Forms.Button();
+            this.buttonCost = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.richTextBoxRooms = new System.Windows.Forms.RichTextBox();
+            this.toolStripButtonRead = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -247,7 +250,7 @@
             // labelRoom
             // 
             this.labelRoom.AutoSize = true;
-            this.labelRoom.BackColor = System.Drawing.Color.AliceBlue;
+            this.labelRoom.BackColor = System.Drawing.Color.Ivory;
             this.labelRoom.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelRoom.Location = new System.Drawing.Point(873, 57);
             this.labelRoom.Name = "labelRoom";
@@ -258,7 +261,7 @@
             // labelSquare
             // 
             this.labelSquare.AutoSize = true;
-            this.labelSquare.BackColor = System.Drawing.Color.AliceBlue;
+            this.labelSquare.BackColor = System.Drawing.Color.Ivory;
             this.labelSquare.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSquare.Location = new System.Drawing.Point(822, 112);
             this.labelSquare.Name = "labelSquare";
@@ -269,7 +272,7 @@
             // labelNumberOfWindows
             // 
             this.labelNumberOfWindows.AutoSize = true;
-            this.labelNumberOfWindows.BackColor = System.Drawing.Color.AliceBlue;
+            this.labelNumberOfWindows.BackColor = System.Drawing.Color.Ivory;
             this.labelNumberOfWindows.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNumberOfWindows.Location = new System.Drawing.Point(822, 164);
             this.labelNumberOfWindows.Name = "labelNumberOfWindows";
@@ -280,7 +283,7 @@
             // labelSide
             // 
             this.labelSide.AutoSize = true;
-            this.labelSide.BackColor = System.Drawing.Color.AliceBlue;
+            this.labelSide.BackColor = System.Drawing.Color.Ivory;
             this.labelSide.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSide.Location = new System.Drawing.Point(822, 215);
             this.labelSide.Name = "labelSide";
@@ -290,13 +293,17 @@
             // 
             // buttonConfirmAddress
             // 
+            this.buttonConfirmAddress.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.buttonConfirmAddress.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonConfirmAddress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmAddress.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonConfirmAddress.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonConfirmAddress.Location = new System.Drawing.Point(31, 492);
             this.buttonConfirmAddress.Name = "buttonConfirmAddress";
             this.buttonConfirmAddress.Size = new System.Drawing.Size(294, 37);
             this.buttonConfirmAddress.TabIndex = 20;
             this.buttonConfirmAddress.Text = "Принять данные";
-            this.buttonConfirmAddress.UseVisualStyleBackColor = true;
+            this.buttonConfirmAddress.UseVisualStyleBackColor = false;
             this.buttonConfirmAddress.Click += new System.EventHandler(this.buttonConfirmAddress_Click);
             // 
             // textBoxCounty
@@ -438,7 +445,7 @@
             // maskedTextBoxYear
             // 
             this.maskedTextBoxYear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBoxYear.Location = new System.Drawing.Point(607, 425);
+            this.maskedTextBoxYear.Location = new System.Drawing.Point(591, 425);
             this.maskedTextBoxYear.Mask = "0000";
             this.maskedTextBoxYear.Name = "maskedTextBoxYear";
             this.maskedTextBoxYear.Size = new System.Drawing.Size(148, 30);
@@ -471,7 +478,7 @@
             // trackBarNumOfRooms
             // 
             this.trackBarNumOfRooms.BackColor = System.Drawing.Color.LightCyan;
-            this.trackBarNumOfRooms.Location = new System.Drawing.Point(607, 210);
+            this.trackBarNumOfRooms.Location = new System.Drawing.Point(591, 210);
             this.trackBarNumOfRooms.Maximum = 6;
             this.trackBarNumOfRooms.Minimum = 1;
             this.trackBarNumOfRooms.Name = "trackBarNumOfRooms";
@@ -482,7 +489,7 @@
             // labelOne
             // 
             this.labelOne.AutoSize = true;
-            this.labelOne.Location = new System.Drawing.Point(614, 243);
+            this.labelOne.Location = new System.Drawing.Point(598, 243);
             this.labelOne.Name = "labelOne";
             this.labelOne.Size = new System.Drawing.Size(15, 17);
             this.labelOne.TabIndex = 43;
@@ -491,7 +498,7 @@
             // labelSix
             // 
             this.labelSix.AutoSize = true;
-            this.labelSix.Location = new System.Drawing.Point(736, 243);
+            this.labelSix.Location = new System.Drawing.Point(720, 243);
             this.labelSix.Name = "labelSix";
             this.labelSix.Size = new System.Drawing.Size(15, 17);
             this.labelSix.TabIndex = 44;
@@ -515,7 +522,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel3.BackColor = System.Drawing.Color.Ivory;
             this.panel3.Location = new System.Drawing.Point(792, 39);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(353, 227);
@@ -525,25 +532,32 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
-            this.toolStripLabel2});
+            this.toolStripButtonSave,
+            this.toolStripSeparator1,
+            this.toolStripButtonRead,
+            this.toolStripSeparator,
+            this.toolStripRecycleBin});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1156, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 27);
             this.toolStrip1.TabIndex = 48;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripLabel1
+            // toolStripSeparator
             // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(140, 22);
-            this.toolStripLabel1.Text = "Сохранить данные";
+            this.toolStripSeparator.BackColor = System.Drawing.Color.White;
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripLabel2
+            // toolStripRecycleBin
             // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(182, 22);
-            this.toolStripLabel2.Text = "Чтение данных из файла";
+            this.toolStripRecycleBin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripRecycleBin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRecycleBin.Image")));
+            this.toolStripRecycleBin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripRecycleBin.Name = "toolStripRecycleBin";
+            this.toolStripRecycleBin.Size = new System.Drawing.Size(29, 24);
+            this.toolStripRecycleBin.Text = "Очистить данные";
+            this.toolStripRecycleBin.Click += new System.EventHandler(this.toolStripRecycleBin_Click);
             // 
             // statusStrip
             // 
@@ -551,7 +565,7 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 539);
+            this.statusStrip.Location = new System.Drawing.Point(0, 544);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1156, 28);
             this.statusStrip.TabIndex = 49;
@@ -571,55 +585,90 @@
             // 
             // buttonConfirmFlat
             // 
+            this.buttonConfirmFlat.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonConfirmFlat.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonConfirmFlat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmFlat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonConfirmFlat.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonConfirmFlat.Location = new System.Drawing.Point(425, 492);
             this.buttonConfirmFlat.Name = "buttonConfirmFlat";
             this.buttonConfirmFlat.Size = new System.Drawing.Size(294, 37);
             this.buttonConfirmFlat.TabIndex = 50;
             this.buttonConfirmFlat.Text = "Принять данные";
-            this.buttonConfirmFlat.UseVisualStyleBackColor = true;
+            this.buttonConfirmFlat.UseVisualStyleBackColor = false;
             this.buttonConfirmFlat.Click += new System.EventHandler(this.buttonConfirmFlat_Click);
             // 
             // buttonConfirmOneRoom
             // 
+            this.buttonConfirmOneRoom.BackColor = System.Drawing.Color.Ivory;
+            this.buttonConfirmOneRoom.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonConfirmOneRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmOneRoom.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonConfirmOneRoom.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonConfirmOneRoom.Location = new System.Drawing.Point(826, 277);
             this.buttonConfirmOneRoom.Name = "buttonConfirmOneRoom";
             this.buttonConfirmOneRoom.Size = new System.Drawing.Size(294, 37);
             this.buttonConfirmOneRoom.TabIndex = 51;
             this.buttonConfirmOneRoom.Text = "Добавить комнату";
-            this.buttonConfirmOneRoom.UseVisualStyleBackColor = true;
+            this.buttonConfirmOneRoom.UseVisualStyleBackColor = false;
             this.buttonConfirmOneRoom.Click += new System.EventHandler(this.buttonConfirmOneRoom_Click);
             // 
-            // buttonConfirmRooms
+            // buttonCost
             // 
-            this.buttonConfirmRooms.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonConfirmRooms.Location = new System.Drawing.Point(826, 322);
-            this.buttonConfirmRooms.Name = "buttonConfirmRooms";
-            this.buttonConfirmRooms.Size = new System.Drawing.Size(294, 37);
-            this.buttonConfirmRooms.TabIndex = 52;
-            this.buttonConfirmRooms.Text = "Принять данные";
-            this.buttonConfirmRooms.UseVisualStyleBackColor = true;
-            this.buttonConfirmRooms.Click += new System.EventHandler(this.buttonConfirmRooms_Click);
+            this.buttonCost.BackColor = System.Drawing.Color.MintCream;
+            this.buttonCost.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCost.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCost.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonCost.Location = new System.Drawing.Point(826, 492);
+            this.buttonCost.Name = "buttonCost";
+            this.buttonCost.Size = new System.Drawing.Size(294, 37);
+            this.buttonCost.TabIndex = 52;
+            this.buttonCost.Text = "Рассчитать стоимость";
+            this.buttonCost.UseVisualStyleBackColor = false;
+            this.buttonCost.Click += new System.EventHandler(this.buttonConfirmRooms_Click);
             // 
             // richTextBoxRooms
             // 
             this.richTextBoxRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBoxRooms.Cursor = System.Windows.Forms.Cursors.No;
             this.richTextBoxRooms.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.richTextBoxRooms.Location = new System.Drawing.Point(792, 372);
+            this.richTextBoxRooms.Location = new System.Drawing.Point(792, 322);
             this.richTextBoxRooms.Name = "richTextBoxRooms";
-            this.richTextBoxRooms.Size = new System.Drawing.Size(353, 107);
+            this.richTextBoxRooms.Size = new System.Drawing.Size(353, 157);
             this.richTextBoxRooms.TabIndex = 53;
             this.richTextBoxRooms.Text = "Данные о комнатах:";
+            // 
+            // toolStripButtonRead
+            // 
+            this.toolStripButtonRead.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonRead.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRead.Name = "toolStripButtonRead";
+            this.toolStripButtonRead.Size = new System.Drawing.Size(186, 24);
+            this.toolStripButtonRead.Text = "Чтения данных из файла";
+            // 
+            // toolStripButtonSave
+            // 
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSave.Name = "toolStripButtonSave";
+            this.toolStripButtonSave.Size = new System.Drawing.Size(144, 24);
+            this.toolStripButtonSave.Text = "Сохранить данные";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // Flat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(1156, 567);
+            this.BackColor = System.Drawing.Color.PowderBlue;
+            this.ClientSize = new System.Drawing.Size(1156, 572);
+            this.Controls.Add(this.labelNumberOfRooms);
             this.Controls.Add(this.richTextBoxRooms);
-            this.Controls.Add(this.buttonConfirmRooms);
+            this.Controls.Add(this.buttonCost);
             this.Controls.Add(this.buttonConfirmOneRoom);
             this.Controls.Add(this.buttonConfirmFlat);
             this.Controls.Add(this.statusStrip);
@@ -653,7 +702,6 @@
             this.Controls.Add(this.labelFloor);
             this.Controls.Add(this.labelYearOfConstruction);
             this.Controls.Add(this.labelOptions);
-            this.Controls.Add(this.labelNumberOfRooms);
             this.Controls.Add(this.labelFootage);
             this.Controls.Add(this.lableFlat);
             this.Controls.Add(this.labelNumberOfFlat);
@@ -729,16 +777,19 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Timer myTimer;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.Button buttonConfirmFlat;
         private System.Windows.Forms.Button buttonConfirmOneRoom;
-        private System.Windows.Forms.Button buttonConfirmRooms;
+        private System.Windows.Forms.Button buttonCost;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.RichTextBox richTextBoxRooms;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripButton toolStripRecycleBin;
+        private System.Windows.Forms.ToolStripButton toolStripButtonRead;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 
