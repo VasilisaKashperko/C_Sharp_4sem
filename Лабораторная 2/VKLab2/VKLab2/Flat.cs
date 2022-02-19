@@ -116,6 +116,9 @@ namespace VKLab2
         #endregion
 
         #region [Flat]
+
+        public int footageIsSquare = 0;
+
         private void buttonConfirmFlat_Click(object sender, EventArgs e)
         {
             try
@@ -124,6 +127,7 @@ namespace VKLab2
                 richTextBoxRooms.Text = "Данные о комнатах:\n";
 
                 flat.Footage = Convert.ToInt32(textBoxFootage.Text);
+                footageIsSquare = Convert.ToInt32(textBoxFootage.Text);
                 flat.Floor = Convert.ToInt32(textBoxFloor.Text);
                 flat.NumberOfRooms = trackBarNumOfRooms.Value;
 
@@ -176,6 +180,7 @@ namespace VKLab2
         #endregion
 
         #region [Rooms]
+        public int footageIsSquareCheck = 0;
 
         Dictionary<int, Room> rooms = new Dictionary<int, Room>();
 
@@ -196,6 +201,7 @@ namespace VKLab2
                     roomForCheck.Number = Convert.ToInt32(comboBoxFlat.Text);
                     roomForCheck.NumberOfWindows = Convert.ToInt32(textBoxNumOfWindows.Text);
                     roomForCheck.Square = Convert.ToInt32(textBoxSquare.Text);
+                    footageIsSquareCheck += Convert.ToInt32(textBoxSquare.Text);
                     roomForCheck.Side = comboBoxSide.Text;
 
                     var results = new List<ValidationResult>();
@@ -207,6 +213,12 @@ namespace VKLab2
                         {
                             MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
+                    }
+
+                    if (footageIsSquare < footageIsSquareCheck )
+                    {
+                        footageIsSquareCheck -= Convert.ToInt32(textBoxSquare.Text);
+                        throw new ConstraintException();
                     }
 
                     else
@@ -229,6 +241,10 @@ namespace VKLab2
             catch (WarningException)
             {
                 MessageBox.Show($"Данные о такой комнате уже существуют.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (ConstraintException)
+            {
+                MessageBox.Show($"Площадь всех комнат превышает метраж самой квартиры. Измените площадь комнаты.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
@@ -267,6 +283,8 @@ namespace VKLab2
             textBoxSquare.Text = null;
             textBoxNumOfWindows.Text = null;
             comboBoxSide.SelectedIndex = -1;
+            footageIsSquareCheck = 0;
+            footageIsSquare = 0;
 
             rooms.Clear();
             richTextBoxRooms.Text = "Данные о комнатах:\n";
