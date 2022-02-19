@@ -92,26 +92,37 @@ namespace VKLab2
             }
         }
 
-        List<Room> rooms = new List<Room>();
+        Dictionary<int, Room> rooms = new Dictionary<int, Room>();
 
         private void buttonConfirmOneRoom_Click(object sender, EventArgs e)
         {
             try
             {
-                rooms.Add(new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
-
-                var info = "Данные о комнатах:\n";
-
-                foreach (var r in rooms.ToArray())
+                if (rooms.ContainsKey(Convert.ToInt32(comboBoxFlat.Text)))
                 {
-                    info += $"Номер: {r.Number} Площадь: {r.Square} Кол-во окон: {r.NumberOfWindows} Сторона: {r.Side}\n";
+                    throw new ArgumentException();
                 }
+                else
+                {
+                    rooms.Add(Convert.ToInt32(comboBoxFlat.Text), new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
 
-                richTextBoxRooms.Text = info;
+                    var info = "Данные о комнатах:\n";
+
+                    foreach (var r in rooms.Values)
+                    {
+                        info += $"Номер: {r.Number} Площадь: {r.Square} Кол-во окон: {r.NumberOfWindows} Сторона: {r.Side}\n";
+                    }
+
+                    richTextBoxRooms.Text = info;
+                }
             }
             catch (FormatException ex)
             {
                 MessageBox.Show($"Введите числа в поля КОМНАТЫ, где подразумевается число, вместо слов.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show($"Данные о такой комнате уже существуют.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {

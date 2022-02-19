@@ -24,7 +24,7 @@ namespace VKLab2
         public Address address;
 
         [Required]
-        public List<Room> AllRooms;
+        public Dictionary<int, Room> AllRooms;
 
         public List<int> NumOfRooms;
 
@@ -56,7 +56,7 @@ namespace VKLab2
         [Range(1, 20, ErrorMessage = "Вы ввели несуществующий этаж.")]
         public int Floor { get => _floor; set { _floor = value; } }
 
-        public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, List<Room> r)
+        public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, Dictionary<int, Room> r)
         {
             Footage = footage;
             NumberOfRooms = numberOfRooms;
