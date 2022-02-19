@@ -43,9 +43,14 @@ namespace VKLab2
 
                 flat.address = flatAddress;
             }
-            catch (FormatException)
+
+            catch (FormatException ex)
             {
-                MessageBox.Show("Введите числа, вместо слов, где подразумевается число.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Введите числа в поля АДРЕСА, где подразумевается число, вместо слов.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                MessageBox.Show("Данные об адресе записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -77,13 +82,16 @@ namespace VKLab2
 
                 flat.YearOfConstruction = Convert.ToInt32(maskedTextBoxYear.Text);
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
-                MessageBox.Show("Введите числа, вместо слов, где подразумевается число.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Введите числа в поля КВАРТИРЫ, где подразумевается число, вместо слов.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                MessageBox.Show("Данные о квартире записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        //Dictionary<int, object> rooms = new Dictionary<int, object>();
         List<Room> rooms = new List<Room>();
 
         private void buttonConfirmOneRoom_Click(object sender, EventArgs e)
@@ -91,11 +99,23 @@ namespace VKLab2
             try
             {
                 rooms.Add(new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
-                //if(rooms.Contains(Room == this.Room))
+
+                var info = "Данные о комнатах:\n";
+
+                foreach (var r in rooms.ToArray())
+                {
+                    info += $"Номер: {r.Number} Площадь: {r.Square} Кол-во окон: {r.NumberOfWindows} Сторона: {r.Side}\n";
+                }
+
+                richTextBoxRooms.Text = info;
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
-                MessageBox.Show("Введите числа, вместо слов, где подразумевается число.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Введите числа в поля КОМНАТЫ, где подразумевается число, вместо слов.\n{ex.Message}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                MessageBox.Show("Данные о комнате записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         

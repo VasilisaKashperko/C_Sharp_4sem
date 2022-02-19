@@ -82,6 +82,8 @@
             this.buttonConfirmFlat = new System.Windows.Forms.Button();
             this.buttonConfirmOneRoom = new System.Windows.Forms.Button();
             this.buttonConfirmRooms = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.richTextBoxRooms = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -600,12 +602,23 @@
             this.buttonConfirmRooms.UseVisualStyleBackColor = true;
             this.buttonConfirmRooms.Click += new System.EventHandler(this.buttonConfirmRooms_Click);
             // 
+            // richTextBoxRooms
+            // 
+            this.richTextBoxRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBoxRooms.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBoxRooms.Location = new System.Drawing.Point(792, 372);
+            this.richTextBoxRooms.Name = "richTextBoxRooms";
+            this.richTextBoxRooms.Size = new System.Drawing.Size(353, 107);
+            this.richTextBoxRooms.TabIndex = 53;
+            this.richTextBoxRooms.Text = "Данные о комнатах:";
+            // 
             // Flat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(1156, 567);
+            this.Controls.Add(this.richTextBoxRooms);
             this.Controls.Add(this.buttonConfirmRooms);
             this.Controls.Add(this.buttonConfirmOneRoom);
             this.Controls.Add(this.buttonConfirmFlat);
@@ -724,6 +737,8 @@
         private System.Windows.Forms.Button buttonConfirmFlat;
         private System.Windows.Forms.Button buttonConfirmOneRoom;
         private System.Windows.Forms.Button buttonConfirmRooms;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.RichTextBox richTextBoxRooms;
     }
 }
 
