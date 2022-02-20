@@ -19,6 +19,7 @@ namespace VKLab2
 
         private int _yearOfConstruction;
         private int _floor;
+        private int _cost;
 
         [Required]
         public Address address;
@@ -45,12 +46,14 @@ namespace VKLab2
         public bool Balcony { get => _balcony; set { _balcony = value; } }
 
         [Required]
-        [Range(1960, 2023, ErrorMessage = "Вы ввели недопустимый год постройки.")]
+        [Range(1960, 2022, ErrorMessage = "Вы ввели недопустимый год постройки.")]
         public int YearOfConstruction { get => _yearOfConstruction; set { _yearOfConstruction = value; } }
 
         [Required]
         [Range(1, 20, ErrorMessage = "Вы ввели несуществующий этаж.")]
         public int Floor { get => _floor; set { _floor = value; } }
+
+        public int Cost { get => _cost; set { _cost = value; } }
 
         public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, Dictionary<int, Room> r)
         {

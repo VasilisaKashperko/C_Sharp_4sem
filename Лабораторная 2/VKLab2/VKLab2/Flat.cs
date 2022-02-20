@@ -98,6 +98,10 @@ namespace VKLab2
                         MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Данные об адресе записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
             catch (FormatException)
@@ -107,10 +111,6 @@ namespace VKLab2
             catch (Exception)
             {
                 MessageBox.Show($"Введите слова в поля АДРЕСА, где подразумеваются названия, вместо чисел.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                MessageBox.Show("Данные об адресе записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         #endregion
@@ -123,13 +123,22 @@ namespace VKLab2
         {
             try
             {
+                #region [Clear data and values]
                 rooms.Clear();
                 richTextBoxRooms.Text = "Данные о комнатах:\n";
+                #endregion
+
+                int cost = 2000;
 
                 flat.Footage = Convert.ToInt32(textBoxFootage.Text);
                 footageIsSquare = Convert.ToInt32(textBoxFootage.Text);
+                cost += flat.Footage;
+
                 flat.Floor = Convert.ToInt32(textBoxFloor.Text);
+                cost *= flat.Floor;
+
                 flat.NumberOfRooms = trackBarNumOfRooms.Value;
+                cost *= flat.NumberOfRooms;
 
                 List<int> roomNumbers = new List<int>();
 
@@ -145,11 +154,36 @@ namespace VKLab2
                 comboBoxFlat.DataSource = bindingSource.DataSource;
 
                 flat.Kitchen = checkBoxKitchen.Checked;
+                if(flat.Kitchen == true)
+                {
+                    cost += 500;
+                }
+
                 flat.Bathroom = checkBoxBathroom.Checked;
+                if (flat.Bathroom == true)
+                {
+                    cost += 500;
+                }
+
                 flat.Wc = checkBoxWC.Checked;
+                if (flat.Wc == true)
+                {
+                    cost += 500;
+                }
+
                 flat.Balcony = checkBoxBalcony.Checked;
+                if (flat.Balcony == true)
+                {
+                    cost += 500;
+                }
 
                 flat.YearOfConstruction = Convert.ToInt32(maskedTextBoxYear.Text);
+                if(flat.YearOfConstruction > 2000)
+                {
+                    cost += 10000;
+                }
+
+                flat.Cost = cost;
 
                 var results = new List<ValidationResult>();
                 var context = new ValidationContext(flat);
@@ -161,14 +195,14 @@ namespace VKLab2
                         MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Данные о квартире записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (FormatException)
             {
                 MessageBox.Show($"Введите числа в поля КВАРТИРЫ, где подразумевается число, вместо слов.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                MessageBox.Show("Данные о квартире записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void comboBoxFlat_SelectedIndexChanged(object sender, EventArgs e)
@@ -199,21 +233,15 @@ namespace VKLab2
                     Room roomForCheck = new Room();
 
                     roomForCheck.Number = Convert.ToInt32(comboBoxFlat.Text);
+
                     roomForCheck.NumberOfWindows = Convert.ToInt32(textBoxNumOfWindows.Text);
+
                     roomForCheck.Square = Convert.ToInt32(textBoxSquare.Text);
                     footageIsSquareCheck += Convert.ToInt32(textBoxSquare.Text);
                     roomForCheck.Side = comboBoxSide.Text;
 
                     var results = new List<ValidationResult>();
                     var context = new ValidationContext(roomForCheck);
-
-                    if (!Validator.TryValidateObject(roomForCheck, context, results, true))
-                    {
-                        foreach (var error in results)
-                        {
-                            MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
 
                     if (footageIsSquare < footageIsSquareCheck )
                     {
@@ -223,14 +251,27 @@ namespace VKLab2
 
                     else
                     {
-                        rooms.Add(Convert.ToInt32(comboBoxFlat.Text), new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
-
-                        foreach (var r in rooms.Values)
+                        if (!Validator.TryValidateObject(roomForCheck, context, results, true))
                         {
-                            info += $"Номер: {r.Number} Площадь: {r.Square} Кол-во окон: {r.NumberOfWindows} Сторона: {r.Side}\n";
+                            foreach (var error in results)
+                            {
+                                MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
 
-                        richTextBoxRooms.Text = info;
+                        else
+                        {
+                            rooms.Add(Convert.ToInt32(comboBoxFlat.Text), new Room(Convert.ToInt32(comboBoxFlat.Text), Convert.ToInt32(textBoxSquare.Text), Convert.ToInt32(textBoxNumOfWindows.Text), comboBoxSide.Text));
+
+                            foreach (var r in rooms.Values)
+                            {
+                                info += $"Номер: {r.Number} Площадь: {r.Square} Кол-во окон: {r.NumberOfWindows} Сторона: {r.Side}\n";
+                            }
+
+                            richTextBoxRooms.Text = info;
+
+                            MessageBox.Show("Данные о комнате записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
@@ -244,17 +285,28 @@ namespace VKLab2
             }
             catch (ConstraintException)
             {
-                MessageBox.Show($"Площадь всех комнат превышает метраж самой квартиры. Измените площадь комнаты.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            finally
-            {
-                MessageBox.Show("Данные о комнате записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Площадь всех комнат превышает метраж самой квартиры. Измените площадь комнаты или введите другой метраж квартиры.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-        
+
+        #endregion
+
+        #region [Cost]
+
         private void buttonConfirmRooms_Click(object sender, EventArgs e)
         {
             flat.AllRooms = rooms;
+
+            Cost Cost = new Cost();
+            Cost.Show();
+            if (flat.Cost <= 2000)
+            {
+                Cost.LabelCost = $"Вы не ввели все данные";
+            }
+            else
+            {
+                Cost.LabelCost = $"{flat.Cost} $";
+            }
         }
 
         #endregion

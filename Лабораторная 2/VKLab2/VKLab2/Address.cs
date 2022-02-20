@@ -26,7 +26,7 @@ namespace VKLab2
         public string City { get => _city; set { _city = value; } }
 
         [Required]
-        [StringLength(30, ErrorMessage = "Вы ввели слишком короткое или длинное название региона.", MinimumLength = 2)]
+        [StringLength(30, ErrorMessage = "Вы ввели слишком короткое или длинное название района.", MinimumLength = 2)]
         public string District { get => _district; set { _district = value; } }
 
         [Required]
@@ -37,6 +37,7 @@ namespace VKLab2
         [Range(1, 500, ErrorMessage = "Вы ввели несуществующий номер дома.")]
         public int House { get => _house; set { _house = value; } }
 
+        [Range(0, 20, ErrorMessage ="Вы ввели несуществующий корпус.")]
         public int Housing { get => _housing; set { _housing = value; } }
 
         [Required]
