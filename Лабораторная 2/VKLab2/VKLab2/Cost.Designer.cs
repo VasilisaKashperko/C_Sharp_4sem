@@ -36,7 +36,7 @@
             // 
             this.labelInfoCost.AutoSize = true;
             this.labelInfoCost.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInfoCost.Location = new System.Drawing.Point(40, 23);
+            this.labelInfoCost.Location = new System.Drawing.Point(67, 24);
             this.labelInfoCost.Name = "labelInfoCost";
             this.labelInfoCost.Size = new System.Drawing.Size(390, 27);
             this.labelInfoCost.TabIndex = 0;
@@ -45,7 +45,7 @@
             // labelCost
             // 
             this.labelCost.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCost.Location = new System.Drawing.Point(77, 63);
+            this.labelCost.Location = new System.Drawing.Point(90, 66);
             this.labelCost.Name = "labelCost";
             this.labelCost.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelCost.Size = new System.Drawing.Size(326, 26);
@@ -58,7 +58,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(498, 111);
+            this.ClientSize = new System.Drawing.Size(546, 111);
             this.Controls.Add(this.labelCost);
             this.Controls.Add(this.labelInfoCost);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

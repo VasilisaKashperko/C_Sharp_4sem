@@ -74,6 +74,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonRead = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripRecycleBin = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -82,11 +85,9 @@
             this.buttonConfirmFlat = new System.Windows.Forms.Button();
             this.buttonConfirmOneRoom = new System.Windows.Forms.Button();
             this.buttonCost = new System.Windows.Forms.Button();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.richTextBoxRooms = new System.Windows.Forms.RichTextBox();
-            this.toolStripButtonRead = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -543,6 +544,29 @@
             this.toolStrip1.TabIndex = 48;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButtonSave
+            // 
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSave.Name = "toolStripButtonSave";
+            this.toolStripButtonSave.Size = new System.Drawing.Size(144, 24);
+            this.toolStripButtonSave.Text = "Сохранить данные";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonRead
+            // 
+            this.toolStripButtonRead.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonRead.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonRead.Name = "toolStripButtonRead";
+            this.toolStripButtonRead.Size = new System.Drawing.Size(186, 24);
+            this.toolStripButtonRead.Text = "Чтения данных из файла";
+            this.toolStripButtonRead.Click += new System.EventHandler(this.toolStripButtonRead_Click);
+            // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.BackColor = System.Drawing.Color.White;
@@ -639,26 +663,9 @@
             this.richTextBoxRooms.TabIndex = 53;
             this.richTextBoxRooms.Text = "Данные о комнатах:";
             // 
-            // toolStripButtonRead
+            // openFileDialog
             // 
-            this.toolStripButtonRead.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonRead.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRead.Name = "toolStripButtonRead";
-            this.toolStripButtonRead.Size = new System.Drawing.Size(186, 24);
-            this.toolStripButtonRead.Text = "Чтения данных из файла";
-            // 
-            // toolStripButtonSave
-            // 
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(144, 24);
-            this.toolStripButtonSave.Text = "Сохранить данные";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // Flat
             // 
@@ -783,13 +790,14 @@
         private System.Windows.Forms.Button buttonConfirmFlat;
         private System.Windows.Forms.Button buttonConfirmOneRoom;
         private System.Windows.Forms.Button buttonCost;
-        private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.RichTextBox richTextBoxRooms;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
         private System.Windows.Forms.ToolStripButton toolStripRecycleBin;
         private System.Windows.Forms.ToolStripButton toolStripButtonRead;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

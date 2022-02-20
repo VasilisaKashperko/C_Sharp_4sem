@@ -1,12 +1,18 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+//using Microsoft.WindowsServerSolutions.Administration.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace VKLab2
 {
+    [Serializable]
+    [XmlRoot(Namespace = "VKLab2")]
+    [XmlType("flatInfo")]
+
     public class FlatInfo
     {
         private int _footage; // метраж
@@ -22,40 +28,54 @@ namespace VKLab2
         private int _cost;
 
         [Required]
+        [XmlArray("AddressInfo")]
+        [XmlArrayItem("AddressItems")]
         public Address address;
 
         [Required]
-        public Dictionary<int, Room> AllRooms;
+        [XmlArray("AllRooms")]
+        [XmlArrayItem("Room")]
+        public SortedList<int, Room> AllRooms;
 
+        [XmlIgnore]
         public List<int> NumOfRooms;
 
         [Required]
         [Range(50, 500, ErrorMessage = "Вы ввели недопустимое количество метража квартиры.")]
+        [XmlElement(ElementName = "Footage")]
         public int Footage { get => _footage; set { _footage = value; } }
 
         [Required]
         [Range(1, 6, ErrorMessage = "Вы ввели недопустимое количество комнат в квартире.")]
+        [XmlElement(ElementName = "NumberOfRooms")]
         public int NumberOfRooms { get => _numberOfRooms; set { _numberOfRooms = value; } }
 
+        [XmlElement(ElementName = "Kitchen")]
         public bool Kitchen { get => _kitchen; set { _kitchen = value; } }
 
+        [XmlElement(ElementName = "Bathroom")]
         public bool Bathroom { get => _bathroom; set { _bathroom = value; } }
 
+        [XmlElement(ElementName = "Wc")]
         public bool Wc { get => _wc; set { _wc = value; } }
 
+        [XmlElement(ElementName = "Balcony")]
         public bool Balcony { get => _balcony; set { _balcony = value; } }
 
         [Required]
         [Range(1960, 2022, ErrorMessage = "Вы ввели недопустимый год постройки.")]
+        [XmlElement(ElementName = "YearOfConstruction")]
         public int YearOfConstruction { get => _yearOfConstruction; set { _yearOfConstruction = value; } }
 
         [Required]
         [Range(1, 20, ErrorMessage = "Вы ввели несуществующий этаж.")]
+        [XmlElement(ElementName = "Floor")]
         public int Floor { get => _floor; set { _floor = value; } }
 
+        [XmlIgnore]
         public int Cost { get => _cost; set { _cost = value; } }
 
-        public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, Dictionary<int, Room> r)
+        public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, SortedList<int, Room> r)
         {
             Footage = footage;
             NumberOfRooms = numberOfRooms;
@@ -69,16 +89,21 @@ namespace VKLab2
             AllRooms = r;
         }
 
+        //public FlatInfo()
+        //{
+        //    Footage = 0;
+        //    NumberOfRooms = 0;
+        //    Kitchen = false;
+        //    Bathroom = false;
+        //    Wc = false;
+        //    Balcony = false;
+        //    YearOfConstruction = 0;
+        //    Floor = 0;
+        //}
+
         public FlatInfo()
         {
-            Footage = 0;
-            NumberOfRooms = 0;
-            Kitchen = false;
-            Bathroom = false;
-            Wc = false;
-            Balcony = false;
-            YearOfConstruction = 0;
-            Floor = 0;
+
         }
 
         public override string ToString()

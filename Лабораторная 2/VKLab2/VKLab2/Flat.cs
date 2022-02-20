@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Xml.Serialization;
 using System.Windows.Forms;
 
 namespace VKLab2
@@ -216,7 +214,7 @@ namespace VKLab2
         #region [Rooms]
         public int footageIsSquareCheck = 0;
 
-        Dictionary<int, Room> rooms = new Dictionary<int, Room>();
+        SortedList<int, Room> rooms = new SortedList<int, Room>();
 
         private void buttonConfirmOneRoom_Click(object sender, EventArgs e)
         {
@@ -269,6 +267,7 @@ namespace VKLab2
                             }
 
                             richTextBoxRooms.Text = info;
+                            flat.AllRooms = rooms;
 
                             MessageBox.Show("Данные о комнате записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -295,8 +294,6 @@ namespace VKLab2
 
         private void buttonConfirmRooms_Click(object sender, EventArgs e)
         {
-            flat.AllRooms = rooms;
-
             Cost Cost = new Cost();
             Cost.Show();
             if (flat.Cost <= 2000)
@@ -340,6 +337,68 @@ namespace VKLab2
 
             rooms.Clear();
             richTextBoxRooms.Text = "Данные о комнатах:\n";
+        }
+        #endregion
+
+        #region [Save data]
+
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //List<FlatInfo> list = new List<FlatInfo>();
+                //list.Add(flat);
+
+                saveFileDialog.FileName = "results.xml";
+                saveFileDialog.ShowDialog();
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(FlatInfo));
+
+                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
+                {
+                    xmlSerializer.Serialize(fs, flat);
+                }
+
+                //XmlSerializeWrapper.Serialize(list, "results.xml");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region [Read data]
+        private void toolStripButtonRead_Click(object sender, EventArgs e)
+        {
+            openFileDialog.FileName = "results.xml";
+            openFileDialog.ShowDialog();
+            Read read = new Read();
+            read.Show();
+
+            List<FlatInfo> result;
+            try
+            {
+                using (FileStream fst = new FileStream(openFileDialog.FileName, FileMode.Open))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<FlatInfo>));
+                    result = (List<FlatInfo>)xmlSerializer.Deserialize(fst);
+                }
+
+                if (result.Count != 0)
+                {
+                    foreach (FlatInfo res in result)
+                    {
+                        GlobalList.list.Add(res);
+                        read.listBox.Items.Add(res);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         #endregion
     }
