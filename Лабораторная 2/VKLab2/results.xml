@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ArrayOfFlatInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FlatInfo>
+    <address>
+      <Country>Беларусь</Country>
+      <City>Гомель</City>
+      <District>Советский</District>
+      <Street>Денисенко</Street>
+      <House>38</House>
+      <Housing>0</Housing>
+      <NumberOfFlat>25</NumberOfFlat>
+    </address>
+    <NumOfRooms>
+      <int>1</int>
+      <int>2</int>
+      <int>3</int>
+    </NumOfRooms>
+    <Footage>80</Footage>
+    <NumberOfRooms>3</NumberOfRooms>
+    <Kitchen>true</Kitchen>
+    <Bathroom>true</Bathroom>
+    <Wc>true</Wc>
+    <Balcony>true</Balcony>
+    <YearOfConstruction>2001</YearOfConstruction>
+    <Floor>7</Floor>
+    <Cost>55680</Cost>
+  </FlatInfo>
+</ArrayOfFlatInfo>

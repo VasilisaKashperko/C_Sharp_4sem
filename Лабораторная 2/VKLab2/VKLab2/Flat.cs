@@ -214,7 +214,7 @@ namespace VKLab2
         #region [Rooms]
         public int footageIsSquareCheck = 0;
 
-        SortedList<int, Room> rooms = new SortedList<int, Room>();
+        Dictionary<int, Room> rooms = new Dictionary<int, Room>();
 
         private void buttonConfirmOneRoom_Click(object sender, EventArgs e)
         {
@@ -346,20 +346,19 @@ namespace VKLab2
         {
             try
             {
-                //List<FlatInfo> list = new List<FlatInfo>();
-                //list.Add(flat);
+                List<FlatInfo> list = new List<FlatInfo>();
+                list.Add(flat);
+
+                XmlSerializer xml = new XmlSerializer(typeof(List<FlatInfo>));
 
                 saveFileDialog.FileName = "results.xml";
                 saveFileDialog.ShowDialog();
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(FlatInfo));
 
-                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
                 {
-                    xmlSerializer.Serialize(fs, flat);
+                    xml.Serialize(fs, list);
+                    MessageBox.Show("Данные записаны!", "Поздравление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                //XmlSerializeWrapper.Serialize(list, "results.xml");
-
             }
             catch (Exception ex)
             {
@@ -372,26 +371,57 @@ namespace VKLab2
         #region [Read data]
         private void toolStripButtonRead_Click(object sender, EventArgs e)
         {
-            openFileDialog.FileName = "results.xml";
-            openFileDialog.ShowDialog();
-            Read read = new Read();
-            read.Show();
-
-            List<FlatInfo> result;
             try
             {
+                XmlSerializer xml = new XmlSerializer(typeof(List<FlatInfo>));
+                List<FlatInfo> flat;
+                openFileDialog.FileName = "results.xml";
+                openFileDialog.ShowDialog();
+
                 using (FileStream fst = new FileStream(openFileDialog.FileName, FileMode.Open))
                 {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<FlatInfo>));
-                    result = (List<FlatInfo>)xmlSerializer.Deserialize(fst);
+                    flat = (List<FlatInfo>)xml.Deserialize(fst);
                 }
 
-                if (result.Count != 0)
+                if (flat.Count != 0)
                 {
-                    foreach (FlatInfo res in result)
+                    Read read = new Read();
+                    read.Show();
+
+                    foreach (FlatInfo st in flat)
                     {
-                        GlobalList.list.Add(res);
-                        read.listBox.Items.Add(res);
+                        read.listBox.Items.Add($"АДРЕС");
+                        read.listBox.Items.Add($"\tСтрана: {st.address.Country}");
+                        read.listBox.Items.Add($"\tГород: {st.address.City}");
+                        read.listBox.Items.Add($"\tРайон: {st.address.District}");
+                        read.listBox.Items.Add($"\tУлица: {st.address.Street}");
+                        read.listBox.Items.Add($"\tДом: {st.address.House}");
+                        read.listBox.Items.Add($"\tКорпус: {st.address.Housing}");
+                        read.listBox.Items.Add($"\tНомер квартиры: {st.address.NumberOfFlat}");
+
+                        read.listBox.Items.Add($"ДАННЫЕ О КВАРТИРЕ");
+                        read.listBox.Items.Add($"\tМетраж: {st.Footage}");
+                        read.listBox.Items.Add($"\tЭтажа: {st.Footage}");
+                        read.listBox.Items.Add($"\tКоличество комнат: {st.NumberOfRooms}");
+                        
+                        if(st.Kitchen == true)
+                        {
+                            read.listBox.Items.Add($"\tЕсть кухня");
+                        }
+                        if (st.Wc == true)
+                        {
+                            read.listBox.Items.Add($"\tЕсть туалет");
+                        }
+                        if (st.Bathroom == true)
+                        {
+                            read.listBox.Items.Add($"\tЕсть ванная комната");
+                        }
+                        if (st.Balcony == true)
+                        {
+                            read.listBox.Items.Add($"\tЕсть балкон");
+                        }
+
+                        read.listBox.Items.Add($"\tГод постройки: {st.YearOfConstruction}");
                     }
                 }
             }
