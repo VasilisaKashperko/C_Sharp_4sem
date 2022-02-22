@@ -224,6 +224,7 @@ namespace VKLab2
 
                 if (rooms.ContainsKey(Convert.ToInt32(comboBoxFlat.Text)))
                 {
+                    footageIsSquareCheck -= Convert.ToInt32(textBoxSquare.Text);
                     throw new WarningException();
                 }
                 else
@@ -255,6 +256,7 @@ namespace VKLab2
                             {
                                 MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
+                            footageIsSquareCheck -= Convert.ToInt32(textBoxSquare.Text);
                         }
 
                         else
@@ -422,6 +424,9 @@ namespace VKLab2
                         }
 
                         read.listBox.Items.Add($"\tГод постройки: {st.YearOfConstruction}");
+
+                        read.listBox.Items.Add($"СТОИМОСТЬ КВАРТИРЫ: {st.Cost}$");
+
                     }
                 }
             }

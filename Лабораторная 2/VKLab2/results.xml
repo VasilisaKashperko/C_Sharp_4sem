@@ -15,14 +15,14 @@
       <int>2</int>
       <int>3</int>
     </NumOfRooms>
-    <Footage>80</Footage>
+    <Footage>120</Footage>
     <NumberOfRooms>3</NumberOfRooms>
     <Kitchen>true</Kitchen>
     <Bathroom>true</Bathroom>
     <Wc>true</Wc>
     <Balcony>true</Balcony>
-    <YearOfConstruction>2001</YearOfConstruction>
+    <YearOfConstruction>2018</YearOfConstruction>
     <Floor>7</Floor>
-    <Cost>55680</Cost>
+    <Cost>56520</Cost>
   </FlatInfo>
 </ArrayOfFlatInfo>
