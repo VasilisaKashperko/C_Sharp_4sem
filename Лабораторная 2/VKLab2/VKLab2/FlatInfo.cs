@@ -86,11 +86,6 @@ namespace VKLab2
             Floor = 0;
         }
 
-        //public FlatInfo()
-        //{
-
-        //}
-
         public override string ToString()
         {
             return address.Country + ", " + address.City + ", " + address.District + ". "
