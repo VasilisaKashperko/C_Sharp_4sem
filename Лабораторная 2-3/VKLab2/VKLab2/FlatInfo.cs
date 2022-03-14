@@ -60,7 +60,7 @@ namespace VKLab2
 
         public int Cost { get => _cost; set { _cost = value; } }
 
-        public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add, Dictionary<int, Room> r)
+        public FlatInfo(int footage, int numberOfRooms, bool kitchen, bool bathroom, bool wc, bool balcony, int yearOfConstruction, int floor, Address add)
         {
             Footage = footage;
             NumberOfRooms = numberOfRooms;
@@ -71,7 +71,6 @@ namespace VKLab2
             YearOfConstruction = yearOfConstruction;
             Floor = floor;
             address = add;
-            AllRooms = r;
         }
 
         public FlatInfo()
@@ -84,6 +83,16 @@ namespace VKLab2
             Balcony = false;
             YearOfConstruction = 0;
             Floor = 0;
+        }
+
+        public FlatInfo(FlatInfo flat)
+        {
+            Footage = flat.Footage;
+            NumberOfRooms = flat.NumberOfRooms;
+            YearOfConstruction = flat.YearOfConstruction;
+            address.District = flat.address.District;
+            address.City = flat.address.City;
+            Cost = flat.Cost;
         }
 
         public override string ToString()

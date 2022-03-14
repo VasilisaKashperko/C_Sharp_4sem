@@ -73,7 +73,12 @@
       <DependentUpon>Read.cs</DependentUpon>
     </Compile>
     <Compile Include="Room.cs" />
-    <Compile Include="XmlSerializeWrapper.cs" />
+    <Compile Include="Sorting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sorting.Designer.cs">
+      <DependentUpon>Sorting.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cost.resx">
       <DependentUpon>Cost.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="Read.resx">
       <DependentUpon>Read.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sorting.resx">
+      <DependentUpon>Sorting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\FlatInfo.datasource" />
     <None Include="Properties\DataSources\Room.datasource" />

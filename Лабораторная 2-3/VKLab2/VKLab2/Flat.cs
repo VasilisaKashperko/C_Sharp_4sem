@@ -6,6 +6,7 @@ using System.Data;
 using System.IO;
 using System.Xml.Serialization;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace VKLab2
 {
@@ -20,7 +21,7 @@ namespace VKLab2
         #region [Timer]
         private void myTimer_Tick(object sender, EventArgs e)
         {
-            toolStripStatusLabel.Text = "Дата и время: " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+            toolStripStatusLabel.Text = "Дата и время: " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString() + ". Количество созданных объектов: " + GlobalList.list.Count();
         }
         #endregion
 
@@ -152,7 +153,7 @@ namespace VKLab2
                 comboBoxFlat.DataSource = bindingSource.DataSource;
 
                 flat.Kitchen = checkBoxKitchen.Checked;
-                if(flat.Kitchen == true)
+                if (flat.Kitchen == true)
                 {
                     cost += 500;
                 }
@@ -176,7 +177,7 @@ namespace VKLab2
                 }
 
                 flat.YearOfConstruction = Convert.ToInt32(maskedTextBoxYear.Text);
-                if(flat.YearOfConstruction > 2000)
+                if (flat.YearOfConstruction > 2000)
                 {
                     cost += 10000;
                 }
@@ -242,7 +243,7 @@ namespace VKLab2
                     var results = new List<ValidationResult>();
                     var context = new ValidationContext(roomForCheck);
 
-                    if (footageIsSquare < footageIsSquareCheck )
+                    if (footageIsSquare < footageIsSquareCheck)
                     {
                         footageIsSquareCheck -= Convert.ToInt32(textBoxSquare.Text);
                         throw new ConstraintException();
@@ -305,6 +306,7 @@ namespace VKLab2
             else
             {
                 Cost.LabelCost = $"{flat.Cost} $";
+                GlobalList.list.Add(new FlatInfo(flat.Footage, flat.NumberOfRooms, flat.Kitchen, flat.Bathroom, flat.Wc, flat.Balcony, flat.YearOfConstruction, flat.Floor, flat.address));
             }
         }
 
@@ -338,13 +340,14 @@ namespace VKLab2
             footageIsSquare = 0;
 
             rooms.Clear();
+            footageIsSquareCheck = 0;
             richTextBoxRooms.Text = "Данные о комнатах:\n";
         }
         #endregion
 
         #region [Save data]
 
-        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        private void toolStripButtonSave_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -356,7 +359,7 @@ namespace VKLab2
                 saveFileDialog.FileName = "results.xml";
                 saveFileDialog.ShowDialog();
 
-                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.Create))
+                using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
                 {
                     xml.Serialize(fs, list);
                     MessageBox.Show("Данные записаны!", "Поздравление", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -366,6 +369,27 @@ namespace VKLab2
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ToolStripMenuSaveSort_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    XmlSerializer xml = new XmlSerializer(typeof(List<string>));
+
+            //    saveFileDialog.FileName = "resultsSorted.xml";
+            //    saveFileDialog.ShowDialog();
+
+            //    using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
+            //    {
+            //        xml.Serialize(fs, mur);
+            //        MessageBox.Show("Данные записаны!", "Поздравление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         #endregion
@@ -436,5 +460,154 @@ namespace VKLab2
             }
         }
         #endregion
+
+        #region [Sort]
+        //public List<string> mur = null;
+        private void ToolStripMenuSortSquare_Click(object sender, EventArgs e)
+        {
+            IEnumerable<FlatInfo> listLINQ;
+
+            listLINQ = from i in GlobalList.list orderby i.Footage select i;
+            Sorting sorting = new Sorting();
+            sorting.Show();
+
+            if (GlobalList.list.Count == 0)
+            {
+                sorting.listBoxSorting.Items.Add($"Нам нечего сортировать. Нет объектов для сортировки.");
+            }
+
+            else
+            {
+                foreach (FlatInfo item in listLINQ)
+                {
+                    sorting.listBoxSorting.Items.Add($"{item.address.Country}, {item.address.City}, {item.address.Street}, площадь: {item.Footage}");
+                }
+                //foreach (string item in sorting.listBoxSorting.Items)
+                //{
+                //    mur.Add(item.ToString());
+                //}
+            }
+        }
+        private void ToolStripMenuSortRooms_Click(object sender, EventArgs e)
+        {
+            IEnumerable<FlatInfo> listLINQ;
+
+            listLINQ = from i in GlobalList.list orderby i.NumberOfRooms select i;
+            Sorting sorting = new Sorting();
+            sorting.Show();
+
+            if (GlobalList.list.Count == 0)
+            {
+                sorting.listBoxSorting.Items.Add($"Нам нечего сортировать. Нет объектов для сортировки.");
+            }
+
+            else
+            {
+                foreach (FlatInfo item in listLINQ)
+                {
+                    sorting.listBoxSorting.Items.Add($"{item.address.Country}, {item.address.City}, {item.address.Street}, количество комнат: {item.NumberOfRooms}");
+                }
+            }
+        }
+        private void ToolStripMenuSortCost_Click(object sender, EventArgs e)
+        {
+            IEnumerable<FlatInfo> listLINQ;
+
+            listLINQ = from i in GlobalList.list orderby i.Cost select i;
+            Sorting sorting = new Sorting();
+            sorting.Show();
+
+            if (GlobalList.list.Count == 0)
+            {
+                sorting.listBoxSorting.Items.Add($"Нам нечего сортировать. Нет объектов для сортировки.");
+            }
+
+            else
+            {
+                foreach (FlatInfo item in listLINQ)
+                {
+                    sorting.listBoxSorting.Items.Add($"{item.address.Country}, {item.address.City}, {item.address.Street}, цена: {item.Cost}");
+                }
+            }
+        }
+        #endregion
+
+        #region [Object autoCreation]
+        private void Obj_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FlatInfo flat1 = new FlatInfo();
+                Address address = new Address();
+
+                address.City = "Беларусь";
+                address.Country = "Гомель";
+                address.District = "Советский";
+                address.House = 38;
+                address.NumberOfFlat = 25;
+                address.Street = "Денисенко";
+
+                flat1.address = address;
+                flat1.Footage = 120;
+                flat1.Floor = 7;
+                flat1.NumberOfRooms = 3;
+                flat1.YearOfConstruction = 2019;
+                flat1.Cost = 54392;
+
+                GlobalList.list.Add(flat1);
+
+                FlatInfo flat2 = new FlatInfo();
+                Address address2 = new Address();
+
+                address2.City = "Беларусь";
+                address2.Country = "Брест";
+                address2.District = "Ленинский";
+                address2.House = 28;
+                address2.NumberOfFlat = 53;
+                address2.Street = "Рокоссовского";
+
+                flat2.address = address2;
+                flat2.Footage = 163;
+                flat2.Floor = 4;
+                flat2.Kitchen = true;
+                flat2.Wc = true;
+                flat2.Balcony = true;
+                flat2.Bathroom = true;
+                flat2.NumberOfRooms = 2;
+                flat2.YearOfConstruction = 2010;
+                flat2.Cost = 42634;
+
+                GlobalList.list.Add(flat2);
+
+                FlatInfo flat3 = new FlatInfo();
+                Address address3 = new Address();
+
+                address3.City = "Беларусь";
+                address3.Country = "Минск";
+                address3.District = "Ленинский";
+                address3.House = 21;
+                address3.NumberOfFlat = 614;
+                address3.Street = "Белорусская";
+
+                flat3.address = address3;
+                flat3.Footage = 143;
+                flat3.Floor = 3;
+                flat3.Kitchen = true;
+                flat3.Wc = true;
+                flat3.Balcony = true;
+                flat3.Bathroom = true;
+                flat3.NumberOfRooms = 2;
+                flat3.YearOfConstruction = 2001;
+                flat3.Cost = 58302;
+
+                GlobalList.list.Add(flat3);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Вы уже создали такие объекты.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        #endregion
+
     }
 }
