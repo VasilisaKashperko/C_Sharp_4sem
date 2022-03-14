@@ -87,8 +87,6 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownSave = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuSaveSort = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuSaveSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonRead = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -562,7 +560,7 @@
             this.Obj});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1156, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1156, 31);
             this.toolStrip1.TabIndex = 48;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -577,7 +575,7 @@
             this.toolStripDropDownSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownSearch.Image")));
             this.toolStripDropDownSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownSearch.Name = "toolStripDropDownSearch";
-            this.toolStripDropDownSearch.Size = new System.Drawing.Size(97, 24);
+            this.toolStripDropDownSearch.Size = new System.Drawing.Size(97, 28);
             this.toolStripDropDownSearch.Text = "Поиск по...";
             // 
             // ToolStripMenuSearchType
@@ -607,7 +605,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripDropDownSort
             // 
@@ -619,79 +617,64 @@
             this.toolStripDropDownSort.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownSort.Image")));
             this.toolStripDropDownSort.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownSort.Name = "toolStripDropDownSort";
-            this.toolStripDropDownSort.Size = new System.Drawing.Size(137, 24);
+            this.toolStripDropDownSort.Size = new System.Drawing.Size(137, 28);
             this.toolStripDropDownSort.Text = "Сортировка по...";
             // 
             // ToolStripMenuSortSquare
             // 
             this.ToolStripMenuSortSquare.Name = "ToolStripMenuSortSquare";
-            this.ToolStripMenuSortSquare.Size = new System.Drawing.Size(224, 26);
-            this.ToolStripMenuSortSquare.Text = "площади";
+            this.ToolStripMenuSortSquare.Size = new System.Drawing.Size(324, 26);
+            this.ToolStripMenuSortSquare.Text = "площади + сохранение";
             this.ToolStripMenuSortSquare.Click += new System.EventHandler(this.ToolStripMenuSortSquare_Click);
             // 
             // ToolStripMenuSortRooms
             // 
             this.ToolStripMenuSortRooms.Name = "ToolStripMenuSortRooms";
-            this.ToolStripMenuSortRooms.Size = new System.Drawing.Size(224, 26);
-            this.ToolStripMenuSortRooms.Text = "количеству комнат";
+            this.ToolStripMenuSortRooms.Size = new System.Drawing.Size(324, 26);
+            this.ToolStripMenuSortRooms.Text = "количеству комнат + сохранение";
             this.ToolStripMenuSortRooms.Click += new System.EventHandler(this.ToolStripMenuSortRooms_Click);
             // 
             // ToolStripMenuSortCost
             // 
             this.ToolStripMenuSortCost.Name = "ToolStripMenuSortCost";
-            this.ToolStripMenuSortCost.Size = new System.Drawing.Size(224, 26);
-            this.ToolStripMenuSortCost.Text = "цене";
+            this.ToolStripMenuSortCost.Size = new System.Drawing.Size(324, 26);
+            this.ToolStripMenuSortCost.Text = "цене + сохранение";
             this.ToolStripMenuSortCost.Click += new System.EventHandler(this.ToolStripMenuSortCost_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripDropDownSave
             // 
             this.toolStripDropDownSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonSave,
-            this.ToolStripMenuSaveSort,
-            this.ToolStripMenuSaveSearch});
+            this.toolStripButtonSave});
             this.toolStripDropDownSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownSave.Image")));
             this.toolStripDropDownSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownSave.Name = "toolStripDropDownSave";
-            this.toolStripDropDownSave.Size = new System.Drawing.Size(97, 24);
+            this.toolStripDropDownSave.Size = new System.Drawing.Size(97, 28);
             this.toolStripDropDownSave.Text = "Сохранить";
             // 
             // toolStripButtonSave
             // 
             this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(322, 26);
+            this.toolStripButtonSave.Size = new System.Drawing.Size(266, 26);
             this.toolStripButtonSave.Text = "Данные из формы в XML";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click_1);
-            // 
-            // ToolStripMenuSaveSort
-            // 
-            this.ToolStripMenuSaveSort.Name = "ToolStripMenuSaveSort";
-            this.ToolStripMenuSaveSort.Size = new System.Drawing.Size(322, 26);
-            this.ToolStripMenuSaveSort.Text = "Отсортированные данные в XML";
-            this.ToolStripMenuSaveSort.Click += new System.EventHandler(this.ToolStripMenuSaveSort_Click);
-            // 
-            // ToolStripMenuSaveSearch
-            // 
-            this.ToolStripMenuSaveSearch.Name = "ToolStripMenuSaveSearch";
-            this.ToolStripMenuSaveSearch.Size = new System.Drawing.Size(322, 26);
-            this.ToolStripMenuSaveSearch.Text = "Результаты поиска в XML";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButtonRead
             // 
             this.toolStripButtonRead.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButtonRead.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRead.Name = "toolStripButtonRead";
-            this.toolStripButtonRead.Size = new System.Drawing.Size(186, 24);
+            this.toolStripButtonRead.Size = new System.Drawing.Size(186, 28);
             this.toolStripButtonRead.Text = "Чтение данных из файла";
             this.toolStripButtonRead.Click += new System.EventHandler(this.toolStripButtonRead_Click);
             // 
@@ -699,7 +682,7 @@
             // 
             this.toolStripSeparator.BackColor = System.Drawing.Color.White;
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripRecycleBin
             // 
@@ -707,14 +690,14 @@
             this.toolStripRecycleBin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRecycleBin.Image")));
             this.toolStripRecycleBin.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRecycleBin.Name = "toolStripRecycleBin";
-            this.toolStripRecycleBin.Size = new System.Drawing.Size(29, 24);
+            this.toolStripRecycleBin.Size = new System.Drawing.Size(29, 28);
             this.toolStripRecycleBin.Text = "Очистить данные";
             this.toolStripRecycleBin.Click += new System.EventHandler(this.toolStripRecycleBin_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
             // Obj
             // 
@@ -722,7 +705,7 @@
             this.Obj.Image = ((System.Drawing.Image)(resources.GetObject("Obj.Image")));
             this.Obj.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Obj.Name = "Obj";
-            this.Obj.Size = new System.Drawing.Size(143, 24);
+            this.Obj.Size = new System.Drawing.Size(143, 28);
             this.Obj.Text = "Добавить объекты";
             this.Obj.Click += new System.EventHandler(this.Obj_Click);
             // 
@@ -943,8 +926,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownSave;
         private System.Windows.Forms.ToolStripMenuItem toolStripButtonSave;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSaveSort;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSaveSearch;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownSearch;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSearchType;

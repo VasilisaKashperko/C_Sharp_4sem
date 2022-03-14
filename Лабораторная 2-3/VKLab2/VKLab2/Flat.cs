@@ -7,6 +7,7 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Windows.Forms;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace VKLab2
 {
@@ -371,27 +372,6 @@ namespace VKLab2
             }
         }
 
-        private void ToolStripMenuSaveSort_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    XmlSerializer xml = new XmlSerializer(typeof(List<string>));
-
-            //    saveFileDialog.FileName = "resultsSorted.xml";
-            //    saveFileDialog.ShowDialog();
-
-            //    using (FileStream fs = new FileStream(saveFileDialog.FileName, FileMode.OpenOrCreate))
-            //    {
-            //        xml.Serialize(fs, mur);
-            //        MessageBox.Show("Данные записаны!", "Поздравление", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-        }
-
         #endregion
 
         #region [Read data]
@@ -462,9 +442,10 @@ namespace VKLab2
         #endregion
 
         #region [Sort]
-        //public List<string> mur = null;
+        List<FlatInfo> mur = new List<FlatInfo>();
         private void ToolStripMenuSortSquare_Click(object sender, EventArgs e)
         {
+            mur.Clear();
             IEnumerable<FlatInfo> listLINQ;
 
             listLINQ = from i in GlobalList.list orderby i.Footage select i;
@@ -481,15 +462,16 @@ namespace VKLab2
                 foreach (FlatInfo item in listLINQ)
                 {
                     sorting.listBoxSorting.Items.Add($"{item.address.Country}, {item.address.City}, {item.address.Street}, площадь: {item.Footage}");
+                    mur.Add(item);
                 }
-                //foreach (string item in sorting.listBoxSorting.Items)
-                //{
-                //    mur.Add(item.ToString());
-                //}
+                using StreamWriter footageSorted = new StreamWriter(@"D:\Учеба в БГТУ\Пацей Н.В. ООП\Лабораторная 2-3\VKLab2\sortedFootage.json");
+                var meow = JsonConvert.SerializeObject(listLINQ);
+                footageSorted.WriteLine(meow);
             }
         }
         private void ToolStripMenuSortRooms_Click(object sender, EventArgs e)
         {
+            mur.Clear();
             IEnumerable<FlatInfo> listLINQ;
 
             listLINQ = from i in GlobalList.list orderby i.NumberOfRooms select i;
@@ -506,11 +488,16 @@ namespace VKLab2
                 foreach (FlatInfo item in listLINQ)
                 {
                     sorting.listBoxSorting.Items.Add($"{item.address.Country}, {item.address.City}, {item.address.Street}, количество комнат: {item.NumberOfRooms}");
+                    mur.Add(item);
                 }
+                using StreamWriter numOfRooms = new StreamWriter(@"D:\Учеба в БГТУ\Пацей Н.В. ООП\Лабораторная 2-3\VKLab2\sortedNumberOfRooms.json");
+                var meow = JsonConvert.SerializeObject(listLINQ);
+                numOfRooms.WriteLine(meow);
             }
         }
         private void ToolStripMenuSortCost_Click(object sender, EventArgs e)
         {
+            mur.Clear();
             IEnumerable<FlatInfo> listLINQ;
 
             listLINQ = from i in GlobalList.list orderby i.Cost select i;
@@ -527,7 +514,11 @@ namespace VKLab2
                 foreach (FlatInfo item in listLINQ)
                 {
                     sorting.listBoxSorting.Items.Add($"{item.address.Country}, {item.address.City}, {item.address.Street}, цена: {item.Cost}");
+                    mur.Add(item);
                 }
+                using StreamWriter cost = new StreamWriter(@"D:\Учеба в БГТУ\Пацей Н.В. ООП\Лабораторная 2-3\VKLab2\sortedCost.json");
+                var meow = JsonConvert.SerializeObject(listLINQ);
+                cost.WriteLine(meow);
             }
         }
         #endregion
