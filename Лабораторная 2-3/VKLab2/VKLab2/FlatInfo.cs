@@ -51,7 +51,8 @@ namespace VKLab2
         public bool Balcony { get => _balcony; set { _balcony = value; } }
 
         [Required]
-        [Range(1960, 2022, ErrorMessage = "Вы ввели недопустимый год постройки.")]
+        [Attribute(ErrorMessage = "Вы ввели недопустимый год постройки.")]
+        //[Range(1960, 2022, ErrorMessage = "Вы ввели недопустимый год постройки.")] - был до этого такой атрибут
         public int YearOfConstruction { get => _yearOfConstruction; set { _yearOfConstruction = value; } }
 
         [Required]

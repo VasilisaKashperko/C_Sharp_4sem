@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace VKLab2
 {
@@ -18,11 +20,14 @@ namespace VKLab2
             InitializeComponent();
         }
 
+        #region [Search]
+
+        IEnumerable<FlatInfo> listLINQForJson = GlobalList.list;
+
         private void buttonConfirmSearch_Click(object sender, EventArgs e)
         {
-            listBoxSearch.Items.Clear();
-
             IEnumerable<FlatInfo> listLINQ = GlobalList.list;
+            listBoxSearch.Items.Clear();
 
             List<FlatInfo> listCity = new List<FlatInfo>();
             List<FlatInfo> listDistrict = new List<FlatInfo>();
@@ -99,6 +104,53 @@ namespace VKLab2
             {
                 listBoxSearch.Items.Add(list);
             }
+
+            listLINQForJson = listLINQ;
         }
+        #endregion
+
+        #region [Save]
+
+        private void buttonSearchSave_Click(object sender, EventArgs e)
+        {
+            using StreamWriter searched = new StreamWriter(@"D:\Учеба в БГТУ\Пацей Н.В. ООП\Лабораторная 2-3\VKLab2\searched.json");
+            var meow = JsonConvert.SerializeObject(listLINQForJson);
+            searched.WriteLine(meow);
+        }
+
+        #endregion
+
+        #region [Clear]
+
+        private void buttonSearchClear_Click(object sender, EventArgs e)
+        {
+            listBoxSearch.Items.Clear();
+        }
+
+        #endregion
+
+        #region [Validation]
+
+        private void textBoxCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char letter = e.KeyChar;
+
+            if (!Char.IsLetter(letter) && letter != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxDistrict_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char letter = e.KeyChar;
+
+            if (!Char.IsLetter(letter) && letter != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion
     }
 }

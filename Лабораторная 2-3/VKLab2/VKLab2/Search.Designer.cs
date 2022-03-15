@@ -129,6 +129,7 @@
             this.textBoxDistrict.Name = "textBoxDistrict";
             this.textBoxDistrict.Size = new System.Drawing.Size(164, 30);
             this.textBoxDistrict.TabIndex = 61;
+            this.textBoxDistrict.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDistrict_KeyPress);
             // 
             // textBoxCity
             // 
@@ -137,6 +138,7 @@
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(164, 30);
             this.textBoxCity.TabIndex = 60;
+            this.textBoxCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCity_KeyPress);
             // 
             // labelDistrict
             // 
@@ -183,6 +185,7 @@
             this.buttonSearchSave.TabIndex = 63;
             this.buttonSearchSave.Text = "Сохранить результаты";
             this.buttonSearchSave.UseVisualStyleBackColor = false;
+            this.buttonSearchSave.Click += new System.EventHandler(this.buttonSearchSave_Click);
             // 
             // buttonSearchClear
             // 
@@ -197,6 +200,7 @@
             this.buttonSearchClear.TabIndex = 64;
             this.buttonSearchClear.Text = "Очистить";
             this.buttonSearchClear.UseVisualStyleBackColor = false;
+            this.buttonSearchClear.Click += new System.EventHandler(this.buttonSearchClear_Click);
             // 
             // Search
             // 
@@ -219,6 +223,7 @@
             this.Controls.Add(this.trackBarNumOfRooms);
             this.Controls.Add(this.buttonConfirmSearch);
             this.Name = "Search";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Поиск";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).EndInit();
             this.ResumeLayout(false);

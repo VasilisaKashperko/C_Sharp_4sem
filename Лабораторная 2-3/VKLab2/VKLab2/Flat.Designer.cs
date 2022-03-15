@@ -73,28 +73,32 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownSearch = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ToolStripMenuSearchType = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuSearchYear = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuSearchDistrict = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuSearchCity = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.Obj = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownSort = new System.Windows.Forms.ToolStripDropDownButton();
             this.ToolStripMenuSortSquare = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuSortRooms = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuSortCost = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownSave = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonRead = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripRecycleBin = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.Obj = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonAbout = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelLast = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelPanel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelPanelShow = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelSeparator = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelPanelHide = new System.Windows.Forms.ToolStripStatusLabel();
             this.myTimer = new System.Windows.Forms.Timer(this.components);
             this.buttonConfirmFlat = new System.Windows.Forms.Button();
             this.buttonConfirmOneRoom = new System.Windows.Forms.Button();
@@ -103,7 +107,8 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -267,7 +272,7 @@
             this.labelRoom.AutoSize = true;
             this.labelRoom.BackColor = System.Drawing.Color.Ivory;
             this.labelRoom.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelRoom.Location = new System.Drawing.Point(873, 57);
+            this.labelRoom.Location = new System.Drawing.Point(90, 16);
             this.labelRoom.Name = "labelRoom";
             this.labelRoom.Size = new System.Drawing.Size(134, 26);
             this.labelRoom.TabIndex = 14;
@@ -472,7 +477,7 @@
             // 
             this.comboBoxFlat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxFlat.FormattingEnabled = true;
-            this.comboBoxFlat.Location = new System.Drawing.Point(1005, 53);
+            this.comboBoxFlat.Location = new System.Drawing.Point(230, 12);
             this.comboBoxFlat.Name = "comboBoxFlat";
             this.comboBoxFlat.Size = new System.Drawing.Size(50, 30);
             this.comboBoxFlat.TabIndex = 40;
@@ -538,70 +543,77 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Ivory;
+            this.panel3.Controls.Add(this.labelRoom);
+            this.panel3.Controls.Add(this.comboBoxFlat);
             this.panel3.Location = new System.Drawing.Point(792, 39);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(353, 227);
             this.panel3.TabIndex = 47;
             // 
-            // toolStrip1
+            // toolStrip
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownSearch,
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Obj,
+            this.toolStripSeparator4,
+            this.toolStripButton1,
+            this.toolStripSeparator6,
+            this.toolStripButtonSearch,
             this.toolStripSeparator2,
             this.toolStripDropDownSort,
             this.toolStripSeparator3,
-            this.toolStripDropDownSave,
+            this.toolStripButtonSave,
             this.toolStripSeparator1,
             this.toolStripButtonRead,
-            this.toolStripSeparator,
+            this.toolStripSeparator5,
             this.toolStripRecycleBin,
-            this.toolStripSeparator4,
-            this.Obj});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1156, 31);
-            this.toolStrip1.TabIndex = 48;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStripSeparator,
+            this.toolStripButtonAbout});
+            this.toolStrip.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(1156, 27);
+            this.toolStrip.TabIndex = 48;
+            this.toolStrip.Text = "toolStrip1";
             // 
-            // toolStripDropDownSearch
+            // Obj
             // 
-            this.toolStripDropDownSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownSearch.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuSearchType,
-            this.ToolStripMenuSearchYear,
-            this.ToolStripMenuSearchDistrict,
-            this.ToolStripMenuSearchCity});
-            this.toolStripDropDownSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownSearch.Image")));
-            this.toolStripDropDownSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownSearch.Name = "toolStripDropDownSearch";
-            this.toolStripDropDownSearch.Size = new System.Drawing.Size(97, 28);
-            this.toolStripDropDownSearch.Text = "Поиск по...";
+            this.Obj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.Obj.Image = ((System.Drawing.Image)(resources.GetObject("Obj.Image")));
+            this.Obj.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Obj.Name = "Obj";
+            this.Obj.Size = new System.Drawing.Size(143, 24);
+            this.Obj.Text = "Добавить объекты";
+            this.Obj.Click += new System.EventHandler(this.Obj_Click);
             // 
-            // ToolStripMenuSearchType
+            // toolStripSeparator4
             // 
-            this.ToolStripMenuSearchType.Name = "ToolStripMenuSearchType";
-            this.ToolStripMenuSearchType.Size = new System.Drawing.Size(268, 26);
-            this.ToolStripMenuSearchType.Text = "типу (количеству комнат)";
-            this.ToolStripMenuSearchType.Click += new System.EventHandler(this.ToolStripMenuSearchType_Click);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
-            // ToolStripMenuSearchYear
+            // toolStripButton1
             // 
-            this.ToolStripMenuSearchYear.Name = "ToolStripMenuSearchYear";
-            this.ToolStripMenuSearchYear.Size = new System.Drawing.Size(268, 26);
-            this.ToolStripMenuSearchYear.Text = "году";
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(132, 28);
+            this.toolStripButton1.Text = "Удалить объекты";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // ToolStripMenuSearchDistrict
+            // toolStripSeparator6
             // 
-            this.ToolStripMenuSearchDistrict.Name = "ToolStripMenuSearchDistrict";
-            this.ToolStripMenuSearchDistrict.Size = new System.Drawing.Size(268, 26);
-            this.ToolStripMenuSearchDistrict.Text = "району";
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
             // 
-            // ToolStripMenuSearchCity
+            // toolStripButtonSearch
             // 
-            this.ToolStripMenuSearchCity.Name = "ToolStripMenuSearchCity";
-            this.ToolStripMenuSearchCity.Size = new System.Drawing.Size(268, 26);
-            this.ToolStripMenuSearchCity.Text = "городу";
+            this.toolStripButtonSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSearch.Image")));
+            this.toolStripButtonSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSearch.Name = "toolStripButtonSearch";
+            this.toolStripButtonSearch.Size = new System.Drawing.Size(56, 28);
+            this.toolStripButtonSearch.Text = "Поиск";
+            this.toolStripButtonSearch.Click += new System.EventHandler(this.toolStripButtonSearch_Click);
             // 
             // toolStripSeparator2
             // 
@@ -647,23 +659,15 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripDropDownSave
-            // 
-            this.toolStripDropDownSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownSave.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonSave});
-            this.toolStripDropDownSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownSave.Image")));
-            this.toolStripDropDownSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownSave.Name = "toolStripDropDownSave";
-            this.toolStripDropDownSave.Size = new System.Drawing.Size(97, 28);
-            this.toolStripDropDownSave.Text = "Сохранить";
-            // 
             // toolStripButtonSave
             // 
+            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
+            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(266, 26);
-            this.toolStripButtonSave.Text = "Данные из формы в XML";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click_1);
+            this.toolStripButtonSave.Size = new System.Drawing.Size(218, 28);
+            this.toolStripButtonSave.Text = "Сохранить данные из формы";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // toolStripSeparator1
             // 
@@ -679,43 +683,47 @@
             this.toolStripButtonRead.Text = "Чтение данных из файла";
             this.toolStripButtonRead.Click += new System.EventHandler(this.toolStripButtonRead_Click);
             // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
+            // 
+            // toolStripRecycleBin
+            // 
+            this.toolStripRecycleBin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRecycleBin.Image")));
+            this.toolStripRecycleBin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripRecycleBin.Name = "toolStripRecycleBin";
+            this.toolStripRecycleBin.Size = new System.Drawing.Size(147, 28);
+            this.toolStripRecycleBin.Text = "Очистить форму";
+            this.toolStripRecycleBin.Click += new System.EventHandler(this.toolStripRecycleBin_Click);
+            // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.BackColor = System.Drawing.Color.White;
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripRecycleBin
+            // toolStripButtonAbout
             // 
-            this.toolStripRecycleBin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripRecycleBin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRecycleBin.Image")));
-            this.toolStripRecycleBin.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripRecycleBin.Name = "toolStripRecycleBin";
-            this.toolStripRecycleBin.Size = new System.Drawing.Size(29, 28);
-            this.toolStripRecycleBin.Text = "Очистить данные";
-            this.toolStripRecycleBin.Click += new System.EventHandler(this.toolStripRecycleBin_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
-            // 
-            // Obj
-            // 
-            this.Obj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.Obj.Image = ((System.Drawing.Image)(resources.GetObject("Obj.Image")));
-            this.Obj.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Obj.Name = "Obj";
-            this.Obj.Size = new System.Drawing.Size(143, 28);
-            this.Obj.Text = "Добавить объекты";
-            this.Obj.Click += new System.EventHandler(this.Obj_Click);
+            this.toolStripButtonAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonAbout.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAbout.Image")));
+            this.toolStripButtonAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAbout.Name = "toolStripButtonAbout";
+            this.toolStripButtonAbout.Size = new System.Drawing.Size(108, 24);
+            this.toolStripButtonAbout.Text = "О программе";
+            this.toolStripButtonAbout.Click += new System.EventHandler(this.toolStripButtonAbout_Click);
             // 
             // statusStrip
             // 
             this.statusStrip.BackColor = System.Drawing.Color.MintCream;
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
+            this.toolStripStatusLabel,
+            this.toolStripStatusLabelLast,
+            this.toolStripStatusLabelPanel,
+            this.toolStripStatusLabelPanelShow,
+            this.toolStripStatusLabelSeparator,
+            this.toolStripStatusLabelPanelHide});
             this.statusStrip.Location = new System.Drawing.Point(0, 581);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1156, 28);
@@ -729,6 +737,54 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(127, 22);
             this.toolStripStatusLabel.Text = "Дата и время:";
+            // 
+            // toolStripStatusLabelLast
+            // 
+            this.toolStripStatusLabelLast.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toolStripStatusLabelLast.Name = "toolStripStatusLabelLast";
+            this.toolStripStatusLabelLast.Size = new System.Drawing.Size(309, 22);
+            this.toolStripStatusLabelLast.Text = "Последнее выполненое действие: -";
+            // 
+            // toolStripStatusLabelPanel
+            // 
+            this.toolStripStatusLabelPanel.BackColor = System.Drawing.Color.PowderBlue;
+            this.toolStripStatusLabelPanel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toolStripStatusLabelPanel.Name = "toolStripStatusLabelPanel";
+            this.toolStripStatusLabelPanel.Size = new System.Drawing.Size(203, 22);
+            this.toolStripStatusLabelPanel.Text = "Панель инструментов:";
+            // 
+            // toolStripStatusLabelPanelShow
+            // 
+            this.toolStripStatusLabelPanelShow.ActiveLinkColor = System.Drawing.Color.SeaGreen;
+            this.toolStripStatusLabelPanelShow.BackColor = System.Drawing.Color.PowderBlue;
+            this.toolStripStatusLabelPanelShow.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripStatusLabelPanelShow.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toolStripStatusLabelPanelShow.Name = "toolStripStatusLabelPanelShow";
+            this.toolStripStatusLabelPanelShow.Size = new System.Drawing.Size(105, 22);
+            this.toolStripStatusLabelPanelShow.Text = "отобразить";
+            this.toolStripStatusLabelPanelShow.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripStatusLabelPanelShow.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            this.toolStripStatusLabelPanelShow.MouseEnter += new System.EventHandler(this.toolStripStatusLabelPanelShow_MouseEnter);
+            this.toolStripStatusLabelPanelShow.MouseLeave += new System.EventHandler(this.toolStripStatusLabelPanelShow_MouseLeave);
+            // 
+            // toolStripStatusLabelSeparator
+            // 
+            this.toolStripStatusLabelSeparator.BackColor = System.Drawing.Color.PowderBlue;
+            this.toolStripStatusLabelSeparator.Name = "toolStripStatusLabelSeparator";
+            this.toolStripStatusLabelSeparator.Size = new System.Drawing.Size(15, 22);
+            this.toolStripStatusLabelSeparator.Text = "/";
+            // 
+            // toolStripStatusLabelPanelHide
+            // 
+            this.toolStripStatusLabelPanelHide.ActiveLinkColor = System.Drawing.Color.SeaGreen;
+            this.toolStripStatusLabelPanelHide.BackColor = System.Drawing.Color.PowderBlue;
+            this.toolStripStatusLabelPanelHide.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toolStripStatusLabelPanelHide.Name = "toolStripStatusLabelPanelHide";
+            this.toolStripStatusLabelPanelHide.Size = new System.Drawing.Size(70, 22);
+            this.toolStripStatusLabelPanelHide.Text = "cкрыть";
+            this.toolStripStatusLabelPanelHide.Click += new System.EventHandler(this.toolStripStatusLabelPanelHide_Click);
+            this.toolStripStatusLabelPanelHide.MouseEnter += new System.EventHandler(this.toolStripStatusLabelPanelHide_MouseEnter);
+            this.toolStripStatusLabelPanelHide.MouseLeave += new System.EventHandler(this.toolStripStatusLabelPanelHide_MouseLeave);
             // 
             // myTimer
             // 
@@ -756,9 +812,9 @@
             this.buttonConfirmOneRoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmOneRoom.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonConfirmOneRoom.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonConfirmOneRoom.Location = new System.Drawing.Point(826, 277);
+            this.buttonConfirmOneRoom.Location = new System.Drawing.Point(794, 279);
             this.buttonConfirmOneRoom.Name = "buttonConfirmOneRoom";
-            this.buttonConfirmOneRoom.Size = new System.Drawing.Size(294, 37);
+            this.buttonConfirmOneRoom.Size = new System.Drawing.Size(350, 37);
             this.buttonConfirmOneRoom.TabIndex = 51;
             this.buttonConfirmOneRoom.Text = "Добавить комнату";
             this.buttonConfirmOneRoom.UseVisualStyleBackColor = false;
@@ -807,12 +863,11 @@
             this.Controls.Add(this.buttonConfirmOneRoom);
             this.Controls.Add(this.buttonConfirmFlat);
             this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.labelSix);
             this.Controls.Add(this.labelOne);
             this.Controls.Add(this.trackBarNumOfRooms);
             this.Controls.Add(this.comboBoxSide);
-            this.Controls.Add(this.comboBoxFlat);
             this.Controls.Add(this.maskedTextBoxYear);
             this.Controls.Add(this.textBoxNumOfWindows);
             this.Controls.Add(this.textBoxSquare);
@@ -833,7 +888,6 @@
             this.Controls.Add(this.labelSide);
             this.Controls.Add(this.labelNumberOfWindows);
             this.Controls.Add(this.labelSquare);
-            this.Controls.Add(this.labelRoom);
             this.Controls.Add(this.labelFloor);
             this.Controls.Add(this.labelYearOfConstruction);
             this.Controls.Add(this.labelOptions);
@@ -857,8 +911,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подсчет стоимости квартиры";
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.toolStrip.ResumeLayout(false);
+            this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -911,7 +967,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.Timer myTimer;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
@@ -925,14 +981,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownSave;
-        private System.Windows.Forms.ToolStripMenuItem toolStripButtonSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownSearch;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSearchType;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSearchYear;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSearchDistrict;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSearchCity;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownSort;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSortSquare;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuSortRooms;
@@ -940,6 +989,17 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton Obj;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSearch;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAbout;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelPanelShow;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelPanelHide;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelPanel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelSeparator;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLast;
     }
 }
 

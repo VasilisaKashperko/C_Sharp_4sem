@@ -22,7 +22,7 @@ namespace VKLab2
         #region [Timer]
         private void myTimer_Tick(object sender, EventArgs e)
         {
-            toolStripStatusLabel.Text = "Дата и время: " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString() + ". Количество созданных объектов: " + GlobalList.list.Count();
+            toolStripStatusLabel.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString() + ". Количество созданных объектов: " + GlobalList.list.Count();
         }
         #endregion
 
@@ -101,6 +101,7 @@ namespace VKLab2
                 else
                 {
                     MessageBox.Show("Данные об адресе записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    toolStripStatusLabelLast.Text = "Последнее выполненое действие: добавить адрес.";
                 }
             }
 
@@ -198,6 +199,7 @@ namespace VKLab2
                 else
                 {
                     MessageBox.Show("Данные о квартире записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    toolStripStatusLabelLast.Text = "Последнее выполненое действие: добавить квартиру.";
                 }
             }
             catch (FormatException)
@@ -274,6 +276,8 @@ namespace VKLab2
                             flat.AllRooms = rooms;
 
                             MessageBox.Show("Данные о комнате записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            toolStripStatusLabelLast.Text = "Последнее выполненое действие: добавить комнату.";
                         }
                     }
                 }
@@ -309,6 +313,7 @@ namespace VKLab2
                 Cost.LabelCost = $"{flat.Cost} $";
                 GlobalList.list.Add(new FlatInfo(flat.Footage, flat.NumberOfRooms, flat.Kitchen, flat.Bathroom, flat.Wc, flat.Balcony, flat.YearOfConstruction, flat.Floor, flat.address));
             }
+            toolStripStatusLabelLast.Text = "Последнее выполненое действие: цена.";
         }
 
         #endregion
@@ -343,12 +348,13 @@ namespace VKLab2
             rooms.Clear();
             footageIsSquareCheck = 0;
             richTextBoxRooms.Text = "Данные о комнатах:\n";
+            toolStripStatusLabelLast.Text = "Последнее выполненое действие: очистка формы.";
         }
         #endregion
 
         #region [Save data]
 
-        private void toolStripButtonSave_Click_1(object sender, EventArgs e)
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
             try
             {
@@ -365,6 +371,8 @@ namespace VKLab2
                     xml.Serialize(fs, list);
                     MessageBox.Show("Данные записаны!", "Поздравление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                toolStripStatusLabelLast.Text = "Последнее выполненое действие: сохранение в XML.";
             }
             catch (Exception ex)
             {
@@ -432,6 +440,8 @@ namespace VKLab2
                         read.listBox.Items.Add($"СТОИМОСТЬ КВАРТИРЫ: {st.Cost}$");
 
                     }
+
+                    toolStripStatusLabelLast.Text = "Последнее выполненое действие: чтение из XML.";
                 }
             }
             catch (Exception ex)
@@ -467,6 +477,7 @@ namespace VKLab2
                 using StreamWriter footageSorted = new StreamWriter(@"D:\Учеба в БГТУ\Пацей Н.В. ООП\Лабораторная 2-3\VKLab2\sortedFootage.json");
                 var meow = JsonConvert.SerializeObject(listLINQ);
                 footageSorted.WriteLine(meow);
+                toolStripStatusLabelLast.Text = "Последнее выполненое действие: сортировка по площади.";
             }
         }
         private void ToolStripMenuSortRooms_Click(object sender, EventArgs e)
@@ -493,6 +504,7 @@ namespace VKLab2
                 using StreamWriter numOfRooms = new StreamWriter(@"D:\Учеба в БГТУ\Пацей Н.В. ООП\Лабораторная 2-3\VKLab2\sortedNumberOfRooms.json");
                 var meow = JsonConvert.SerializeObject(listLINQ);
                 numOfRooms.WriteLine(meow);
+                toolStripStatusLabelLast.Text = "Последнее выполненое действие: сортировка по кол-ву комнат.";
             }
         }
         private void ToolStripMenuSortCost_Click(object sender, EventArgs e)
@@ -519,6 +531,7 @@ namespace VKLab2
                 using StreamWriter cost = new StreamWriter(@"D:\Учеба в БГТУ\Пацей Н.В. ООП\Лабораторная 2-3\VKLab2\sortedCost.json");
                 var meow = JsonConvert.SerializeObject(listLINQ);
                 cost.WriteLine(meow);
+                toolStripStatusLabelLast.Text = "Последнее выполненое действие: сортировка по цене.";
             }
         }
         #endregion
@@ -592,6 +605,8 @@ namespace VKLab2
                 flat3.Cost = 58302;
 
                 GlobalList.list.Add(flat3);
+
+                toolStripStatusLabelLast.Text = "Последнее выполненое действие: добавить объекты.";
             }
             catch (Exception)
             {
@@ -602,12 +617,75 @@ namespace VKLab2
 
         #region [To searching form]
 
-        private void ToolStripMenuSearchType_Click(object sender, EventArgs e)
+        private void toolStripButtonSearch_Click(object sender, EventArgs e)
         {
             Search formSearch = new Search();
             formSearch.Show();
+            toolStripStatusLabelLast.Text = "Последнее выполненое действие: поиск.";
         }
 
         #endregion
+
+        #region [About]
+
+        private void toolStripButtonAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"V.2\n\nРазработчик: Кашперко Василиса Сергеевна", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            toolStripStatusLabelLast.Text = "Последнее выполненое действие: о программе.";
+        }
+
+        #endregion
+
+        #region [Panel visibility]
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            if (toolStrip.Visible == false)
+            {
+                toolStrip.Show();
+            }
+        }
+
+        private void toolStripStatusLabelPanelHide_Click(object sender, EventArgs e)
+        {
+            if (toolStrip.Visible)
+            {
+                toolStrip.Hide();
+            }
+        }
+
+        private void toolStripStatusLabelPanelShow_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabelPanelShow.ForeColor = System.Drawing.Color.Green;
+        }
+
+        private void toolStripStatusLabelPanelHide_MouseEnter(object sender, EventArgs e)
+        {
+            toolStripStatusLabelPanelHide.ForeColor = System.Drawing.Color.Green;
+        }
+
+        private void toolStripStatusLabelPanelHide_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabelPanelHide.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void toolStripStatusLabelPanelShow_MouseLeave(object sender, EventArgs e)
+        {
+            toolStripStatusLabelPanelShow.ForeColor = System.Drawing.Color.Black;
+        }
+
+        #endregion
+
+        #region [Clear global list]
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            GlobalList.list.Clear();
+            toolStripStatusLabelLast.Text = "Последнее выполненое действие: удалить объекты.";
+        }
+
+
+        #endregion
+
     }
 }

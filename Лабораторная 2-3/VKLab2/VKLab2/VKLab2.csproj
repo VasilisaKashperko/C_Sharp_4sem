@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="Attribute.cs" />
     <Compile Include="Cost.cs">
       <SubType>Form</SubType>
     </Compile>
