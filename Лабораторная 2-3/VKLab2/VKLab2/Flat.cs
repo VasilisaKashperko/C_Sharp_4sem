@@ -523,7 +523,7 @@ namespace VKLab2
         }
         #endregion
 
-        #region [Object autoCreation]
+        #region [Object auto creation]
         private void Obj_Click(object sender, EventArgs e)
         {
             try
@@ -531,8 +531,8 @@ namespace VKLab2
                 FlatInfo flat1 = new FlatInfo();
                 Address address = new Address();
 
-                address.City = "Беларусь";
-                address.Country = "Гомель";
+                address.City = "Гомель";
+                address.Country = "Беларусь";
                 address.District = "Советский";
                 address.House = 38;
                 address.NumberOfFlat = 25;
@@ -550,8 +550,8 @@ namespace VKLab2
                 FlatInfo flat2 = new FlatInfo();
                 Address address2 = new Address();
 
-                address2.City = "Беларусь";
-                address2.Country = "Брест";
+                address2.City = "Брест";
+                address2.Country = "Беларусь";
                 address2.District = "Ленинский";
                 address2.House = 28;
                 address2.NumberOfFlat = 53;
@@ -573,8 +573,8 @@ namespace VKLab2
                 FlatInfo flat3 = new FlatInfo();
                 Address address3 = new Address();
 
-                address3.City = "Беларусь";
-                address3.Country = "Минск";
+                address3.City = "Минск";
+                address3.Country = "Беларусь";
                 address3.District = "Ленинский";
                 address3.House = 21;
                 address3.NumberOfFlat = 614;
@@ -600,5 +600,14 @@ namespace VKLab2
         }
         #endregion
 
+        #region [To searching form]
+
+        private void ToolStripMenuSearchType_Click(object sender, EventArgs e)
+        {
+            Search formSearch = new Search();
+            formSearch.Show();
+        }
+
+        #endregion
     }
 }

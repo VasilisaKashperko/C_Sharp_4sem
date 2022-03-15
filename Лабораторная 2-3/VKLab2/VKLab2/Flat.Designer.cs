@@ -583,6 +583,7 @@
             this.ToolStripMenuSearchType.Name = "ToolStripMenuSearchType";
             this.ToolStripMenuSearchType.Size = new System.Drawing.Size(268, 26);
             this.ToolStripMenuSearchType.Text = "типу (количеству комнат)";
+            this.ToolStripMenuSearchType.Click += new System.EventHandler(this.ToolStripMenuSearchType_Click);
             // 
             // ToolStripMenuSearchYear
             // 

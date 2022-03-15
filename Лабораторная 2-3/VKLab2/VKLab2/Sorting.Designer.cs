@@ -51,7 +51,7 @@
             this.Controls.Add(this.listBoxSorting);
             this.Name = "Sorting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Сортировка квартир по площади";
+            this.Text = "Сортировка";
             this.ResumeLayout(false);
 
         }
