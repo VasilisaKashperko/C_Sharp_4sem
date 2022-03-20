@@ -687,5 +687,21 @@ namespace VKLab2
 
         #endregion
 
+        private void buttonSingleton_Click(object sender, EventArgs e)
+        {
+            SingletonSettings singletonSettings = SingletonSettings.GetInstance();
+
+            singletonSettings.bgColor = Flat.ActiveForm.BackColor;
+            singletonSettings.fontColor = Flat.ActiveForm.ForeColor;
+            singletonSettings.fontSize = float.Parse(Flat.ActiveForm.Font.Size.ToString());
+            singletonSettings.mainFormHeight = Int32.Parse(Flat.ActiveForm.Height.ToString());
+            singletonSettings.mainFormWidth = Int32.Parse(Flat.ActiveForm.Width.ToString());
+
+            MessageBox.Show($"Цвет фона: {singletonSettings.bgColor.Name};\n" +
+                            $"Цвет шрифта: {singletonSettings.fontColor.Name};\n" +
+                            $"Размер шрифта: {singletonSettings.fontSize.ToString()} pt;\n" +
+                            $"Ширина окна формы: {singletonSettings.mainFormWidth.ToString()} px;\n" +
+                            $"Высота окна формы: {singletonSettings.mainFormHeight.ToString()} px.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

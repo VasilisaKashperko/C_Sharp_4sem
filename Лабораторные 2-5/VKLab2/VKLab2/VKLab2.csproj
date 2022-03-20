@@ -54,47 +54,48 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
-    <Compile Include="Attribute.cs" />
-    <Compile Include="Cost.cs">
+    <Compile Include="Main classes\Address.cs" />
+    <Compile Include="Main classes\Attribute.cs" />
+    <Compile Include="Forms\Cost.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cost.Designer.cs">
+    <Compile Include="Forms\Cost.Designer.cs">
       <DependentUpon>Cost.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flat.cs">
+    <Compile Include="Forms\Flat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Flat.Designer.cs">
+    <Compile Include="Forms\Flat.Designer.cs">
       <DependentUpon>Flat.cs</DependentUpon>
     </Compile>
-    <Compile Include="FlatInfo.cs" />
-    <Compile Include="GlobalList.cs" />
+    <Compile Include="Main classes\FlatInfo.cs" />
+    <Compile Include="Main classes\GlobalList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Read.cs">
+    <Compile Include="Forms\Read.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Read.Designer.cs">
+    <Compile Include="Forms\Read.Designer.cs">
       <DependentUpon>Read.cs</DependentUpon>
     </Compile>
-    <Compile Include="Room.cs" />
-    <Compile Include="Search.cs">
+    <Compile Include="Main classes\Room.cs" />
+    <Compile Include="Forms\Search.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Search.Designer.cs">
+    <Compile Include="Forms\Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sorting.cs">
+    <Compile Include="Singleton\SingletonSettings.cs" />
+    <Compile Include="Forms\Sorting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sorting.Designer.cs">
+    <Compile Include="Forms\Sorting.Designer.cs">
       <DependentUpon>Sorting.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Cost.resx">
+    <EmbeddedResource Include="Forms\Cost.resx">
       <DependentUpon>Cost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Flat.resx">
+    <EmbeddedResource Include="Forms\Flat.resx">
       <DependentUpon>Flat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -106,13 +107,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Read.resx">
+    <EmbeddedResource Include="Forms\Read.resx">
       <DependentUpon>Read.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Search.resx">
+    <EmbeddedResource Include="Forms\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sorting.resx">
+    <EmbeddedResource Include="Forms\Sorting.resx">
       <DependentUpon>Sorting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
