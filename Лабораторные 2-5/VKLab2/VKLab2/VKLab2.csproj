@@ -54,6 +54,8 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Design Patterns\Builder.cs" />
+    <Compile Include="Design Patterns\Abstract Factory.cs" />
     <Compile Include="Main classes\Address.cs" />
     <Compile Include="Main classes\Attribute.cs" />
     <Compile Include="Forms\Cost.cs">
@@ -85,7 +87,7 @@
     <Compile Include="Forms\Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
-    <Compile Include="Singleton\SingletonSettings.cs" />
+    <Compile Include="Design Patterns\SingletonSettings.cs" />
     <Compile Include="Forms\Sorting.cs">
       <SubType>Form</SubType>
     </Compile>

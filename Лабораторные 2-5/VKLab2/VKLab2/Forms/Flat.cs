@@ -22,7 +22,8 @@ namespace VKLab2
         #region [Timer]
         private void myTimer_Tick(object sender, EventArgs e)
         {
-            toolStripStatusLabel.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString() + ". Количество созданных объектов: " + GlobalList.list.Count();
+            toolStripStatusLabel.Text = $"{DateTime.Now.ToLongDateString()} {DateTime.Now.ToLongTimeString()} " +
+                                        $"Количество созданных объектов: {GlobalList.list.Count() + GlobalList.flats.Count() + GlobalList.rooms.Count() + Int32.Parse(GlobalList.singleton.ToString())}";
         }
         #endregion
 
@@ -687,21 +688,134 @@ namespace VKLab2
 
         #endregion
 
+        #region [Singleton]
+
         private void buttonSingleton_Click(object sender, EventArgs e)
         {
             SingletonSettings singletonSettings = SingletonSettings.GetInstance();
 
-            singletonSettings.bgColor = Flat.ActiveForm.BackColor;
-            singletonSettings.fontColor = Flat.ActiveForm.ForeColor;
-            singletonSettings.fontSize = float.Parse(Flat.ActiveForm.Font.Size.ToString());
-            singletonSettings.mainFormHeight = Int32.Parse(Flat.ActiveForm.Height.ToString());
-            singletonSettings.mainFormWidth = Int32.Parse(Flat.ActiveForm.Width.ToString());
-
             MessageBox.Show($"Цвет фона: {singletonSettings.bgColor.Name};\n" +
                             $"Цвет шрифта: {singletonSettings.fontColor.Name};\n" +
+                            $"Название шрифта: {singletonSettings.fontName.ToString()};\n" +
                             $"Размер шрифта: {singletonSettings.fontSize.ToString()} pt;\n" +
                             $"Ширина окна формы: {singletonSettings.mainFormWidth.ToString()} px;\n" +
                             $"Высота окна формы: {singletonSettings.mainFormHeight.ToString()} px.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        #endregion
+
+        #region [Abstract Factory]
+
+        private void buttonAbstract_Click(object sender, EventArgs e)
+        {
+            IAbstractFactory gomelFactory = new GomelAbstractFactory();
+            var gomelFlat = gomelFactory.CreateFlat();
+            var gomelRoom = gomelFactory.CreateRoom();
+            MessageBox.Show($"Созданы объекты GomelAbstractFactory:\n\n" +
+                            $"GomelFlat:\n" +
+                            $"\tАдрес: {gomelFlat.FlatAddress}\n" +
+                            $"\tМетраж: {gomelFlat.Footage}\n\n" +
+                            $"GomelRoom:\n" +
+                            $"\tМетраж комнаты: {gomelRoom.RoomFootage}", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            GlobalList.flats.Add(gomelFlat);
+            GlobalList.rooms.Add(gomelRoom);
+
+            IAbstractFactory minskFactory = new MinskAbstractFactory();
+            var minskFlat = minskFactory.CreateFlat();
+            var minskRoom = minskFactory.CreateRoom();
+            MessageBox.Show($"Созданы объекты MinskAbstractFactory:\n\n" +
+                            $"MinskFlat:\n" +
+                            $"\tАдрес: {minskFlat.FlatAddress}\n" +
+                            $"\tМетраж: {minskFlat.Footage}\n\n" +
+                            $"MinskRoom:\n" +
+                            $"\tМетраж комнаты: {minskRoom.RoomFootage}", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            GlobalList.flats.Add(minskFlat);
+            GlobalList.rooms.Add(minskRoom);
+        }
+
+        #endregion
+
+        #region [Builder]
+
+        private void buttonBuilder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Address flatAddress = new Address();
+                int result;
+
+                if (int.TryParse(textBoxCounty.Text, out result) == true)
+                {
+                    throw new Exception();
+                }
+
+                if (int.TryParse(textBoxCity.Text, out result) == true)
+                {
+                    throw new Exception();
+                }
+
+                if (int.TryParse(textBoxDistrict.Text, out result) == true)
+                {
+                    throw new Exception();
+                }
+
+                if (int.TryParse(textBoxStreet.Text, out result) == true)
+                {
+                    throw new Exception();
+                }
+
+                if (textBoxHousing.Text == "")
+                {
+                    textBoxHousing.Text = "0";
+                }
+
+                flatAddress = new FlatInfo.AddressBuilder()
+                    .SetCountry(textBoxCounty.Text)
+                    .SetCity(textBoxCity.Text)
+                    .SetDistrict(textBoxDistrict.Text)
+                    .SetStreet(textBoxStreet.Text)
+                    .SetHouse(Convert.ToInt32(textBoxHouse.Text))
+                    .SetHousing(Convert.ToInt32(textBoxHousing.Text))
+                    .SetNumberOfFlat(Convert.ToInt32(textBoxNumOfFlat.Text))
+                    .Build();
+
+                flat.address = flatAddress;
+
+                var results = new List<ValidationResult>();
+                var context = new ValidationContext(flatAddress);
+
+                if (!Validator.TryValidateObject(flatAddress, context, results, true))
+                {
+                    foreach (var error in results)
+                    {
+                        MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Данные об адресе записаны.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    toolStripStatusLabelLast.Text = "Последнее выполненое действие: добавить адрес.";
+                    MessageBox.Show($"Адрес:" +
+                                    $"\n\tСтрана: {flatAddress.Country}" +
+                                    $"\n\tГород: {flatAddress.City}" +
+                                    $"\n\tРайон: {flatAddress.District}" +
+                                    $"\n\tДом: {flatAddress.House}" +
+                                    $"\n\tКорпус: {flatAddress.Housing}" +
+                                    $"\n\tНомер квартиры: {flatAddress.NumberOfFlat}",
+                                    "Объект создан с помощью Builder", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            catch (FormatException)
+            {
+                MessageBox.Show($"Введите числа в поля АДРЕСА, где подразумевается число, вместо слов.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show($"Введите слова в поля АДРЕСА, где подразумеваются названия, вместо чисел.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
     }
 }

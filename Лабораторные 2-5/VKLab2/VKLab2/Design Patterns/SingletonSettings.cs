@@ -17,14 +17,18 @@ namespace VKLab2
         public float fontSize { get; set; }
         public int mainFormWidth { get; set; }
         public int mainFormHeight { get; set; }
+        public string fontName { get; set; }
+        public int amount { get; set; }
 
         private SingletonSettings()
         {
-            bgColor = Color.PowderBlue;
-            fontColor = Color.Black;
-            fontSize = 1;
-            mainFormWidth = 0;
-            mainFormHeight = 0;
+            bgColor = Flat.ActiveForm.BackColor;
+            fontColor = Flat.ActiveForm.ForeColor;
+            fontName = Flat.ActiveForm.Font.Name;
+            fontSize = float.Parse(Flat.ActiveForm.Font.Size.ToString());
+            mainFormHeight = Int32.Parse(Flat.ActiveForm.Height.ToString());
+            mainFormWidth = Int32.Parse(Flat.ActiveForm.Width.ToString());
+            amount = 1;
         }
 
         public static SingletonSettings GetInstance() // Потокобезопасная реализация
