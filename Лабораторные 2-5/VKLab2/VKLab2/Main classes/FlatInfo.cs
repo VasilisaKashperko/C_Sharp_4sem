@@ -11,7 +11,7 @@ namespace VKLab2
 {
     [Serializable]
 
-    public partial class FlatInfo
+    public partial class FlatInfo : FlatPrototype<FlatInfo>
     {
         private int _footage; // метраж
         private int _numberOfRooms;

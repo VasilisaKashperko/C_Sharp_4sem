@@ -109,6 +109,7 @@
             this.buttonSingleton = new System.Windows.Forms.Button();
             this.buttonAbstract = new System.Windows.Forms.Button();
             this.buttonBuilder = new System.Windows.Forms.Button();
+            this.buttonPrototype = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).BeginInit();
             this.panel3.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -861,7 +862,7 @@
             this.buttonSingleton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSingleton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSingleton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonSingleton.Location = new System.Drawing.Point(1167, 243);
+            this.buttonSingleton.Location = new System.Drawing.Point(1167, 241);
             this.buttonSingleton.Name = "buttonSingleton";
             this.buttonSingleton.Size = new System.Drawing.Size(182, 37);
             this.buttonSingleton.TabIndex = 54;
@@ -891,7 +892,7 @@
             this.buttonBuilder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuilder.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBuilder.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonBuilder.Location = new System.Drawing.Point(1167, 141);
+            this.buttonBuilder.Location = new System.Drawing.Point(1167, 140);
             this.buttonBuilder.Name = "buttonBuilder";
             this.buttonBuilder.Size = new System.Drawing.Size(182, 73);
             this.buttonBuilder.TabIndex = 56;
@@ -899,12 +900,28 @@
             this.buttonBuilder.UseVisualStyleBackColor = false;
             this.buttonBuilder.Click += new System.EventHandler(this.buttonBuilder_Click);
             // 
+            // buttonPrototype
+            // 
+            this.buttonPrototype.BackColor = System.Drawing.Color.Wheat;
+            this.buttonPrototype.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonPrototype.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPrototype.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPrototype.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonPrototype.Location = new System.Drawing.Point(1167, 306);
+            this.buttonPrototype.Name = "buttonPrototype";
+            this.buttonPrototype.Size = new System.Drawing.Size(182, 37);
+            this.buttonPrototype.TabIndex = 57;
+            this.buttonPrototype.Text = "Prototype";
+            this.buttonPrototype.UseVisualStyleBackColor = false;
+            this.buttonPrototype.Click += new System.EventHandler(this.buttonPrototype_Click);
+            // 
             // Flat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1368, 609);
+            this.Controls.Add(this.buttonPrototype);
             this.Controls.Add(this.buttonBuilder);
             this.Controls.Add(this.buttonAbstract);
             this.Controls.Add(this.buttonSingleton);
@@ -1054,6 +1071,7 @@
         private System.Windows.Forms.Button buttonSingleton;
         private System.Windows.Forms.Button buttonAbstract;
         private System.Windows.Forms.Button buttonBuilder;
+        private System.Windows.Forms.Button buttonPrototype;
     }
 }
 

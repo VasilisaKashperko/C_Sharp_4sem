@@ -12,12 +12,14 @@ namespace VKLab2
         int Footage { get; }
     }
 
+    [Serializable]
     public class GomelFlat : IFlat
     {
         public string FlatAddress => "Беларусь, г. Гомель, Советский район";
         public int Footage => 130;
     }
 
+    [Serializable]
     public class MinskFlat : IFlat
     {
         public string FlatAddress => "Беларусь, г. Минск, Ленинский район";
@@ -29,11 +31,13 @@ namespace VKLab2
         int RoomFootage { get; }
     }
 
+    [Serializable]
     public class GomelRoom : IRoom
     {
         public int RoomFootage => 30;
     }
 
+    [Serializable]
     public class MinskRoom : IRoom
     {
         public int RoomFootage => 40;

@@ -556,6 +556,8 @@ namespace VKLab2
                 flat1.Footage = 120;
                 flat1.Floor = 7;
                 flat1.NumberOfRooms = 3;
+                flat1.Wc = true;
+                flat1.Bathroom = true;
                 flat1.YearOfConstruction = 2019;
                 flat1.Cost = 54392;
 
@@ -813,6 +815,59 @@ namespace VKLab2
             catch (Exception)
             {
                 MessageBox.Show($"Введите слова в поля АДРЕСА, где подразумеваются названия, вместо чисел.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
+
+        #region [Prototype]
+
+        private void buttonPrototype_Click(object sender, EventArgs e)
+        {
+            if (GlobalList.list.Count >= 1)
+            {
+                FlatInfo flatForClone = GlobalList.list.Last();
+                FlatInfo clonedFlat = flatForClone.Clone();
+                GlobalList.list.Add(clonedFlat);
+
+                MessageBox.Show($"Склонирована последняя квартира из списка ранее созданных квартир.\n\n" +
+                                $"Страна: {clonedFlat.address.Country}\n" +
+                                $"Город: {clonedFlat.address.City}\n" +
+                                $"Район: {clonedFlat.address.District}\n" +
+                                $"Улица: {clonedFlat.address.Street}\n" +
+                                $"Дом: {clonedFlat.address.House}\n" +
+                                $"Номер квартиры: {clonedFlat.address.NumberOfFlat}\n" +
+                                $"Метраж: {clonedFlat.Footage}\n" +
+                                $"Количество комнат: {clonedFlat.NumberOfRooms}\n" +
+                                $"Год постройки: {clonedFlat.YearOfConstruction}\n" +
+                                $"Этаж: {clonedFlat.Floor}\n" +
+                                $"Стоимость: {clonedFlat.Cost}\n", "Prototype Clone()", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                FlatInfo flatForDeepCopy = GlobalList.list.First();
+                FlatInfo copiedFlat = flatForDeepCopy.DeepCopy();
+                GlobalList.list.Add(copiedFlat);
+
+                MessageBox.Show($"Первая квартира из списка ранее созданных квартир глубоко скопирована.\n\n" +
+                                $"Страна: {copiedFlat.address.Country}\n" +
+                                $"Город: {copiedFlat.address.City}\n" +
+                                $"Район: {copiedFlat.address.District}\n" +
+                                $"Улица: {copiedFlat.address.Street}\n" +
+                                $"Дом: {copiedFlat.address.House}\n" +
+                                $"Корпус: {copiedFlat.address.Housing}\n" +
+                                $"Номер квартиры: {copiedFlat.address.NumberOfFlat}\n" +
+                                $"Метраж: {copiedFlat.Footage}\n" +
+                                $"Количество комнат: {copiedFlat.NumberOfRooms}\n\n" +
+                                $"Ванная: {copiedFlat.Bathroom}\n" +
+                                $"Балкон: {copiedFlat.Balcony}\n" +
+                                $"Туалет: {copiedFlat.Wc}\n" +
+                                $"Кухня: {copiedFlat.Kitchen}\n\n" +
+                                $"Год постройки: {copiedFlat.YearOfConstruction}\n" +
+                                $"Этаж: {copiedFlat.Floor}\n" +
+                                $"Стоимость: {copiedFlat.Cost}\n", "Prototype Clone()", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"Вы еще не создали ни одной квартиры.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

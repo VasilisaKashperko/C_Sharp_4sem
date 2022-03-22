@@ -94,6 +94,7 @@
     <Compile Include="Forms\Sorting.Designer.cs">
       <DependentUpon>Sorting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design Patterns\Prototype.cs" />
     <EmbeddedResource Include="Forms\Cost.resx">
       <DependentUpon>Cost.cs</DependentUpon>
     </EmbeddedResource>
