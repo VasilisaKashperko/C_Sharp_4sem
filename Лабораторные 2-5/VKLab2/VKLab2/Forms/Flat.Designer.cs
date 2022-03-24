@@ -322,7 +322,7 @@
             this.buttonConfirmAddress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmAddress.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonConfirmAddress.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonConfirmAddress.Location = new System.Drawing.Point(30, 512);
+            this.buttonConfirmAddress.Location = new System.Drawing.Point(31, 492);
             this.buttonConfirmAddress.Name = "buttonConfirmAddress";
             this.buttonConfirmAddress.Size = new System.Drawing.Size(294, 37);
             this.buttonConfirmAddress.TabIndex = 20;
@@ -575,7 +575,7 @@
             this.toolStripButtonAbout});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1368, 31);
+            this.toolStrip.Size = new System.Drawing.Size(1368, 27);
             this.toolStrip.TabIndex = 48;
             this.toolStrip.Text = "toolStrip1";
             // 
@@ -585,7 +585,7 @@
             this.Obj.Image = ((System.Drawing.Image)(resources.GetObject("Obj.Image")));
             this.Obj.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Obj.Name = "Obj";
-            this.Obj.Size = new System.Drawing.Size(143, 28);
+            this.Obj.Size = new System.Drawing.Size(143, 24);
             this.Obj.Text = "Добавить объекты";
             this.Obj.Click += new System.EventHandler(this.Obj_Click);
             // 
@@ -862,11 +862,11 @@
             this.buttonSingleton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSingleton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSingleton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonSingleton.Location = new System.Drawing.Point(1167, 241);
+            this.buttonSingleton.Location = new System.Drawing.Point(1167, 39);
             this.buttonSingleton.Name = "buttonSingleton";
-            this.buttonSingleton.Size = new System.Drawing.Size(182, 37);
+            this.buttonSingleton.Size = new System.Drawing.Size(182, 73);
             this.buttonSingleton.TabIndex = 54;
-            this.buttonSingleton.Text = "Singleton";
+            this.buttonSingleton.Text = "Информация о форме";
             this.buttonSingleton.UseVisualStyleBackColor = false;
             this.buttonSingleton.Click += new System.EventHandler(this.buttonSingleton_Click);
             // 
@@ -877,11 +877,11 @@
             this.buttonAbstract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAbstract.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAbstract.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonAbstract.Location = new System.Drawing.Point(1167, 39);
+            this.buttonAbstract.Location = new System.Drawing.Point(1167, 197);
             this.buttonAbstract.Name = "buttonAbstract";
-            this.buttonAbstract.Size = new System.Drawing.Size(182, 73);
+            this.buttonAbstract.Size = new System.Drawing.Size(182, 118);
             this.buttonAbstract.TabIndex = 55;
-            this.buttonAbstract.Text = "Abstract Factory";
+            this.buttonAbstract.Text = "Создать разные квартиры (Abstract Factory)";
             this.buttonAbstract.UseVisualStyleBackColor = false;
             this.buttonAbstract.Click += new System.EventHandler(this.buttonAbstract_Click);
             // 
@@ -892,11 +892,11 @@
             this.buttonBuilder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBuilder.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBuilder.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonBuilder.Location = new System.Drawing.Point(1167, 140);
+            this.buttonBuilder.Location = new System.Drawing.Point(31, 535);
             this.buttonBuilder.Name = "buttonBuilder";
-            this.buttonBuilder.Size = new System.Drawing.Size(182, 73);
+            this.buttonBuilder.Size = new System.Drawing.Size(294, 37);
             this.buttonBuilder.TabIndex = 56;
-            this.buttonBuilder.Text = "Builder для адреса";
+            this.buttonBuilder.Text = "Принять данные (Builder)";
             this.buttonBuilder.UseVisualStyleBackColor = false;
             this.buttonBuilder.Click += new System.EventHandler(this.buttonBuilder_Click);
             // 
@@ -907,11 +907,11 @@
             this.buttonPrototype.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrototype.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPrototype.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonPrototype.Location = new System.Drawing.Point(1167, 306);
+            this.buttonPrototype.Location = new System.Drawing.Point(1167, 136);
             this.buttonPrototype.Name = "buttonPrototype";
             this.buttonPrototype.Size = new System.Drawing.Size(182, 37);
             this.buttonPrototype.TabIndex = 57;
-            this.buttonPrototype.Text = "Prototype";
+            this.buttonPrototype.Text = "Клонировать";
             this.buttonPrototype.UseVisualStyleBackColor = false;
             this.buttonPrototype.Click += new System.EventHandler(this.buttonPrototype_Click);
             // 
@@ -923,8 +923,8 @@
             this.ClientSize = new System.Drawing.Size(1368, 609);
             this.Controls.Add(this.buttonPrototype);
             this.Controls.Add(this.buttonBuilder);
-            this.Controls.Add(this.buttonAbstract);
             this.Controls.Add(this.buttonSingleton);
+            this.Controls.Add(this.buttonAbstract);
             this.Controls.Add(this.buttonCost);
             this.Controls.Add(this.labelNumberOfRooms);
             this.Controls.Add(this.richTextBoxRooms);

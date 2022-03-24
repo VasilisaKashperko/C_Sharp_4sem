@@ -23,7 +23,7 @@ namespace VKLab2
         private void myTimer_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabel.Text = $"{DateTime.Now.ToLongDateString()} {DateTime.Now.ToLongTimeString()} " +
-                                        $"Количество созданных объектов: {GlobalList.list.Count() + GlobalList.flats.Count() + GlobalList.rooms.Count() + Int32.Parse(GlobalList.singleton.ToString())}";
+                                        $"Количество созданных объектов: {GlobalList.list.Count() + GlobalList.flats.Count() + GlobalList.rooms.Count()} и {Int32.Parse(GlobalList.singleton.ToString())} синглтон :)";
         }
         #endregion
 
