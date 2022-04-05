@@ -8,15 +8,29 @@ using System.Xml.Serialization;
 using System.Windows.Forms;
 using System.Linq;
 using Newtonsoft.Json;
+using System.Media;
 
 namespace VKLab2
 {
     public partial class Flat : Form
     {
+        SoundPlayer sp;//объявляем поле типа SoundPlayer
+        SoundPlayerAdapter spa;
+
         public Flat()
         {
             InitializeComponent();
             myTimer.Enabled = true;
+
+            // создаем экземпляр класса SoundPlayer  
+            sp = new SoundPlayer();
+            // вытягиваем из ресурсов звуковой файл  
+            sp.Stream = Properties.Resources.Windows_Unlock;
+
+            // создаем экземпляр класса SoundPlayerAdapter
+            spa = new SoundPlayerAdapter();
+            // теперь мы можем, не добавляя в ресурсы, указывать только путь расположения файла
+            spa.Load("D:\\Учеба в БГТУ\\Пацей Н.В. ООП\\Лабораторные 2-5\\VKLab2\\Windows Unlock.wav");
         }
 
         #region [Timer]
@@ -418,8 +432,8 @@ namespace VKLab2
                         read.listBox.Items.Add($"\tМетраж: {st.Footage}");
                         read.listBox.Items.Add($"\tЭтажа: {st.Footage}");
                         read.listBox.Items.Add($"\tКоличество комнат: {st.NumberOfRooms}");
-                        
-                        if(st.Kitchen == true)
+
+                        if (st.Kitchen == true)
                         {
                             read.listBox.Items.Add($"\tЕсть кухня");
                         }
@@ -696,6 +710,8 @@ namespace VKLab2
         {
             SingletonSettings singletonSettings = SingletonSettings.GetInstance();
 
+            spa.Play();
+
             MessageBox.Show($"Цвет фона: {singletonSettings.bgColor.Name};\n" +
                             $"Цвет шрифта: {singletonSettings.fontColor.Name};\n" +
                             $"Название шрифта: {singletonSettings.fontName.ToString()};\n" +
@@ -872,5 +888,120 @@ namespace VKLab2
         }
 
         #endregion
+
+        #region [Decorator]
+
+        private void buttonConfirmWithDecorator_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                #region [Clear data and values]
+                rooms.Clear();
+                richTextBoxRooms.Text = "Данные о комнатах:\n";
+                #endregion
+
+                int cost = 8000;
+
+                flat.Footage = Convert.ToInt32(textBoxFootage.Text);
+                footageIsSquare = Convert.ToInt32(textBoxFootage.Text);
+                cost += flat.Footage;
+
+                flat.Floor = Convert.ToInt32(textBoxFloor.Text);
+                cost *= flat.Floor;
+
+                flat.NumberOfRooms = trackBarNumOfRooms.Value;
+                cost *= flat.NumberOfRooms;
+
+                List<int> roomNumbers = new List<int>();
+
+                for (int i = 1; i <= flat.NumberOfRooms; i++)
+                {
+                    roomNumbers.Add(i);
+                }
+
+                flat.NumOfRooms = roomNumbers;
+
+                var bindingSource = new BindingSource();
+                bindingSource.DataSource = roomNumbers;
+                comboBoxFlat.DataSource = bindingSource.DataSource;
+
+                flat.Kitchen = checkBoxKitchen.Checked;
+                if (flat.Kitchen == true)
+                {
+                    cost += 500;
+                }
+
+                flat.Bathroom = checkBoxBathroom.Checked;
+                if (flat.Bathroom == true)
+                {
+                    cost += 500;
+                }
+
+                flat.Wc = checkBoxWC.Checked;
+                if (flat.Wc == true)
+                {
+                    cost += 500;
+                }
+
+                flat.Balcony = checkBoxBalcony.Checked;
+                if (flat.Balcony == true)
+                {
+                    cost += 500;
+                }
+
+                flat.YearOfConstruction = Convert.ToInt32(maskedTextBoxYear.Text);
+                if (flat.YearOfConstruction > 2000)
+                {
+                    cost += 10000;
+                }
+
+                flat.Cost = cost;
+
+                var results = new List<ValidationResult>();
+                var context = new ValidationContext(flat);
+
+                if (!Validator.TryValidateObject(flat, context, results, true))
+                {
+                    foreach (var error in results)
+                    {
+                        MessageBox.Show($"{error.ErrorMessage}", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    FlatInfoDecorator flatDeco = new FlatInfoDecorator(flat, true);
+                    MessageBox.Show("Данные о квартире записаны. Квартира с отделкой.", "Системный фидбэк", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    toolStripStatusLabelLast.Text = "Последнее выполненое действие: добавить квартиру.";
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show($"Введите числа в поля КВАРТИРЫ, где подразумевается число, вместо слов.", "Ошибочка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
+
+        #region [Backward]
+
+        History story = new History();
+
+        private void toolStripButtonBack_Click(object sender, EventArgs e)
+        {
+            story.His.Push(GlobalList.list.Last().SaveState());
+            GlobalList.list.Remove(GlobalList.list.Last());
+        }
+        #endregion
+
+        #region [Foreward]
+
+        private void toolStripButtonFore_Click(object sender, EventArgs e)
+        {
+            flat.RestoreState(story.His.Pop());
+            GlobalList.list.Add(flat);
+        }
+
+        #endregion
+
     }
 }

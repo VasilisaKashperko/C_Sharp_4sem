@@ -74,6 +74,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonBack = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonFore = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.Obj = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -110,6 +113,7 @@
             this.buttonAbstract = new System.Windows.Forms.Button();
             this.buttonBuilder = new System.Windows.Forms.Button();
             this.buttonPrototype = new System.Windows.Forms.Button();
+            this.buttonConfirmWithDecorator = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarNumOfRooms)).BeginInit();
             this.panel3.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -558,6 +562,9 @@
             // 
             this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonBack,
+            this.toolStripButtonFore,
+            this.toolStripSeparator7,
             this.Obj,
             this.toolStripSeparator4,
             this.toolStripButton1,
@@ -575,9 +582,34 @@
             this.toolStripButtonAbout});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(1368, 27);
+            this.toolStrip.Size = new System.Drawing.Size(1368, 31);
             this.toolStrip.TabIndex = 48;
             this.toolStrip.Text = "toolStrip1";
+            // 
+            // toolStripButtonBack
+            // 
+            this.toolStripButtonBack.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonBack.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonBack.Image")));
+            this.toolStripButtonBack.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonBack.Name = "toolStripButtonBack";
+            this.toolStripButtonBack.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButtonBack.Text = "toolStripButton2";
+            this.toolStripButtonBack.Click += new System.EventHandler(this.toolStripButtonBack_Click);
+            // 
+            // toolStripButtonFore
+            // 
+            this.toolStripButtonFore.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonFore.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonFore.Image")));
+            this.toolStripButtonFore.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFore.Name = "toolStripButtonFore";
+            this.toolStripButtonFore.Size = new System.Drawing.Size(29, 28);
+            this.toolStripButtonFore.Text = "toolStripButton3";
+            this.toolStripButtonFore.Click += new System.EventHandler(this.toolStripButtonFore_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
             // 
             // Obj
             // 
@@ -585,14 +617,14 @@
             this.Obj.Image = ((System.Drawing.Image)(resources.GetObject("Obj.Image")));
             this.Obj.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Obj.Name = "Obj";
-            this.Obj.Size = new System.Drawing.Size(143, 24);
+            this.Obj.Size = new System.Drawing.Size(143, 28);
             this.Obj.Text = "Добавить объекты";
             this.Obj.Click += new System.EventHandler(this.Obj_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButton1
             // 
@@ -600,14 +632,14 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(132, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(132, 28);
             this.toolStripButton1.Text = "Удалить объекты";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButtonSearch
             // 
@@ -615,14 +647,14 @@
             this.toolStripButtonSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSearch.Image")));
             this.toolStripButtonSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSearch.Name = "toolStripButtonSearch";
-            this.toolStripButtonSearch.Size = new System.Drawing.Size(56, 24);
+            this.toolStripButtonSearch.Size = new System.Drawing.Size(56, 28);
             this.toolStripButtonSearch.Text = "Поиск";
             this.toolStripButtonSearch.Click += new System.EventHandler(this.toolStripButtonSearch_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripDropDownSort
             // 
@@ -634,7 +666,7 @@
             this.toolStripDropDownSort.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownSort.Image")));
             this.toolStripDropDownSort.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownSort.Name = "toolStripDropDownSort";
-            this.toolStripDropDownSort.Size = new System.Drawing.Size(137, 24);
+            this.toolStripDropDownSort.Size = new System.Drawing.Size(137, 28);
             this.toolStripDropDownSort.Text = "Сортировка по...";
             // 
             // ToolStripMenuSortSquare
@@ -661,7 +693,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButtonSave
             // 
@@ -669,35 +701,35 @@
             this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
             this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(218, 24);
+            this.toolStripButtonSave.Size = new System.Drawing.Size(218, 28);
             this.toolStripButtonSave.Text = "Сохранить данные из формы";
             this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButtonRead
             // 
             this.toolStripButtonRead.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripButtonRead.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRead.Name = "toolStripButtonRead";
-            this.toolStripButtonRead.Size = new System.Drawing.Size(186, 24);
+            this.toolStripButtonRead.Size = new System.Drawing.Size(186, 28);
             this.toolStripButtonRead.Text = "Чтение данных из файла";
             this.toolStripButtonRead.Click += new System.EventHandler(this.toolStripButtonRead_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripRecycleBin
             // 
             this.toolStripRecycleBin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRecycleBin.Image")));
             this.toolStripRecycleBin.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripRecycleBin.Name = "toolStripRecycleBin";
-            this.toolStripRecycleBin.Size = new System.Drawing.Size(147, 24);
+            this.toolStripRecycleBin.Size = new System.Drawing.Size(147, 28);
             this.toolStripRecycleBin.Text = "Очистить форму";
             this.toolStripRecycleBin.Click += new System.EventHandler(this.toolStripRecycleBin_Click);
             // 
@@ -705,7 +737,7 @@
             // 
             this.toolStripSeparator.BackColor = System.Drawing.Color.White;
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButtonAbout
             // 
@@ -713,7 +745,7 @@
             this.toolStripButtonAbout.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAbout.Image")));
             this.toolStripButtonAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAbout.Name = "toolStripButtonAbout";
-            this.toolStripButtonAbout.Size = new System.Drawing.Size(108, 24);
+            this.toolStripButtonAbout.Size = new System.Drawing.Size(108, 28);
             this.toolStripButtonAbout.Text = "О программе";
             this.toolStripButtonAbout.Click += new System.EventHandler(this.toolStripButtonAbout_Click);
             // 
@@ -801,7 +833,7 @@
             this.buttonConfirmFlat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmFlat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonConfirmFlat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonConfirmFlat.Location = new System.Drawing.Point(425, 512);
+            this.buttonConfirmFlat.Location = new System.Drawing.Point(425, 492);
             this.buttonConfirmFlat.Name = "buttonConfirmFlat";
             this.buttonConfirmFlat.Size = new System.Drawing.Size(294, 37);
             this.buttonConfirmFlat.TabIndex = 50;
@@ -915,12 +947,28 @@
             this.buttonPrototype.UseVisualStyleBackColor = false;
             this.buttonPrototype.Click += new System.EventHandler(this.buttonPrototype_Click);
             // 
+            // buttonConfirmWithDecorator
+            // 
+            this.buttonConfirmWithDecorator.BackColor = System.Drawing.Color.Ivory;
+            this.buttonConfirmWithDecorator.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonConfirmWithDecorator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirmWithDecorator.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonConfirmWithDecorator.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonConfirmWithDecorator.Location = new System.Drawing.Point(402, 535);
+            this.buttonConfirmWithDecorator.Name = "buttonConfirmWithDecorator";
+            this.buttonConfirmWithDecorator.Size = new System.Drawing.Size(337, 37);
+            this.buttonConfirmWithDecorator.TabIndex = 58;
+            this.buttonConfirmWithDecorator.Text = "Принять и включить отделку";
+            this.buttonConfirmWithDecorator.UseVisualStyleBackColor = false;
+            this.buttonConfirmWithDecorator.Click += new System.EventHandler(this.buttonConfirmWithDecorator_Click);
+            // 
             // Flat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1368, 609);
+            this.Controls.Add(this.buttonConfirmWithDecorator);
             this.Controls.Add(this.buttonPrototype);
             this.Controls.Add(this.buttonBuilder);
             this.Controls.Add(this.buttonSingleton);
@@ -1072,6 +1120,10 @@
         private System.Windows.Forms.Button buttonAbstract;
         private System.Windows.Forms.Button buttonBuilder;
         private System.Windows.Forms.Button buttonPrototype;
+        private System.Windows.Forms.Button buttonConfirmWithDecorator;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripButton toolStripButtonBack;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFore;
     }
 }
 

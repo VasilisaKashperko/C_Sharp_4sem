@@ -2,7 +2,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-//using Microsoft.WindowsServerSolutions.Administration.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,8 +50,8 @@ namespace VKLab2
         public bool Balcony { get => _balcony; set { _balcony = value; } }
 
         [Required]
-        [Attribute(ErrorMessage = "Вы ввели недопустимый год постройки.")]
-        //[Range(1960, 2022, ErrorMessage = "Вы ввели недопустимый год постройки.")] - был до этого такой атрибут
+        //[Attribute(ErrorMessage = "Вы ввели недопустимый год постройки.")] // собственный атрибут
+        [Range(1960, 2022, ErrorMessage = "Вы ввели недопустимый год постройки.")]
         public int YearOfConstruction { get => _yearOfConstruction; set { _yearOfConstruction = value; } }
 
         [Required]
@@ -102,6 +101,25 @@ namespace VKLab2
                 + address.Street + ", " + address.House + "," + address.Housing + ", " + address.NumberOfFlat + ". "
                 + Footage + ", " + NumberOfRooms + ", " + YearOfConstruction + ", " + Floor + ". "
                 + ". \n\n";
+        }
+        public Memento SaveState()
+        {
+            return new Memento(Footage, NumberOfRooms, Kitchen, Bathroom, Wc, Balcony, YearOfConstruction, Floor, address, Cost);
+        }
+
+        // восстановление состояния
+        public void RestoreState(Memento memento)
+        {
+            this.address = memento.address;
+            this.Balcony = memento.Balcony;
+            this.Bathroom = memento.Bathroom;
+            this.Floor = memento.Floor;
+            this.Footage = memento.Footage;
+            this.Kitchen = memento.Kitchen;
+            this.Wc = memento.Wc;
+            this.YearOfConstruction = memento.YearOfConstruction;
+            this.Cost = memento.Cost;
+            this.NumberOfRooms = memento.NumberOfRooms;
         }
     }
 

@@ -54,8 +54,11 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Design Patterns\Decorator.cs" />
+    <Compile Include="Design Patterns\Adapter.cs" />
     <Compile Include="Design Patterns\Builder.cs" />
     <Compile Include="Design Patterns\Abstract Factory.cs" />
+    <Compile Include="Design Patterns\Memento.cs" />
     <Compile Include="Main classes\Address.cs" />
     <Compile Include="Main classes\Attribute.cs" />
     <Compile Include="Forms\Cost.cs">
@@ -109,6 +112,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Forms\Read.resx">
       <DependentUpon>Read.cs</DependentUpon>
@@ -137,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows Unlock.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
